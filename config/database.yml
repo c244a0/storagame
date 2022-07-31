@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: storagame_production
-  username: username: <%= ENV['STORAGAME_DATABASE_USERNAME'] %> 
+  username: <%= ENV['STORAGAME_DATABASE_USERNAME'] %> 
   password: <%= ENV['STORAGAME_DATABASE_PASSWORD'] %>
