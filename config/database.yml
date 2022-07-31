@@ -13,7 +13,7 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
+  username: <%= ENV['DATABASE_USERNAME'] %> 
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /tmp/mysql.sock
 
@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: storagame_production
-  username: <%= ENV['STORAGAME_DATABASE_USERNAME'] %> 
-  password: <%= ENV['STORAGAME_DATABASE_PASSWORD'] %>
+  username: <%= ENV['DATABASE_USERNAME'] %> 
+  password: <%= ENV['DATABASE_PASSWORD'] %>
