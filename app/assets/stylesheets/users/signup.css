@@ -1,0 +1,48 @@
+
+
+.signup {
+  font-size: 40px;
+  text-align: center;
+  color: #ffff;
+  padding: 20px;
+}
+
+.field {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 20px;
+  color: #ffff;
+  font-size: 15px;
+}
+.body {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(https://pakutaso.cdn.rabify.me/shared/img/thumb/PKPAKU3426.jpg.webp?d=1420);
+  background-size: cover;
+  min-height: -webkit-fill-available;
+}
+
+.signup-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+.signup-btn input {
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #000033;
+  color: #ffff;
+  font-size: 15px;
+}
+
+@media screen and (max-width:700px) {
+  .body {
+    min-height: 900px;
+    background-image: url(https://pakutaso.cdn.rabify.me/shared/img/thumb/YAT1992hanabi005.jpg.webp?d=710);
+    background-size: cover;
+  }
+  
+}
