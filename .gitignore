@@ -31,7 +31,12 @@ config/master.key
 # dotenv, dotenv-rails
 # TODO Comment out these rules if environment variables can be committed
 .env
+
+DATABASE_USERNAME="tron"
+DATABASE_PASSWORD="1984"
 .env*.local
+DATABASE_USERNAME="tron"
+DATABASE_PASSWORD="1984"
 
 ## Environment normalization:
 /.bundle
