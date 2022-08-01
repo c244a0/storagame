@@ -1,5 +1,5 @@
 .body_password_foget {
-  height: 100vh;
+  height: calc(100vh - 100px);
   width: 100vw;
   background-image: url(https://pakutaso.cdn.rabify.me/shared/img/thumb/YAMAyamasha-12.jpg.webp?d=1420);
   background-size: cover;

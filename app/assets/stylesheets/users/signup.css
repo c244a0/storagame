@@ -8,7 +8,7 @@
 }
 
 .field {
-  width: 50vh;
+  width: 30vh;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -18,13 +18,17 @@
   text-align: center;
 }
 
+.field label {
+  font-size: 30px;
+}
+
 .field input{
   border-radius: 30px;
   padding: 15px;
 }
 
 .body {
-  height: 100vh;
+  height: calc(100vh - 100px);
   width: 100vw;
   background-image: url(https://pakutaso.cdn.rabify.me/shared/img/thumb/kumakichi2381.jpg.webp?d=1420);
   background-size: cover;
