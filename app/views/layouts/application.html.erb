@@ -10,6 +10,26 @@
   </head>
 
   <body>
+    <div class="header">
+      <div class="header-logo">
+        <%= link_to 'Storagame', root_path  %>
+      </div>
+      <div class="header-list">
+        <div class="post">
+          <% if user_signed_in? %>
+            <%= link_to '投稿する', root_path  %>
+            <%= link_to 'ログアウト', destroy_user_session_path, class: "logout", method: :delete %>
+          <% else %>
+            <%= link_to 'ログイン', new_user_session_path, class: "login" %>
+            <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
     <%= yield %>
+    <div class="footer">
+      <p>storagame</p>
+      <%= link_to 'お問い合わせ', '#', class: "inquiry" %>
+    </div>
   </body>
 </html>

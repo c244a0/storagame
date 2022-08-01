@@ -1,0 +1,10 @@
+.body_password_foget {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(https://pakutaso.cdn.rabify.me/shared/img/thumb/YAMAyamasha-12.jpg.webp?d=1420);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+}

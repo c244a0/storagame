@@ -13,3 +13,66 @@
  *= require_tree .
  *= require_self
  */
+ * {
+  box-sizing: border-box;
+}
+/* エラーによるレイアウト崩壊の抑制*/
+.field_with_errors {
+  display: contents;
+}
+/* ヘッダー部分 */
+
+
+.header {
+  width: 100vw;
+  display: flex;
+}
+
+.header-logo {
+  width: 17vw;
+  height: 80px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-logo a{
+  font-size: 20px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.header-list {
+  width: calc(100vw - 17vw);
+  height: 80px;
+  background-color: #444444;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.header-list a {
+  font-size: 20px;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 5px;
+  background-color: #708090;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+/* フッター */
+.footer {
+  display: flex;
+  background-color: rgb(94, 94, 94);
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.inquiry{
+  text-decoration: none;
+  color: black;
+}
+

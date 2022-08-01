@@ -35,6 +35,7 @@ config/master.key
 DATABASE_USERNAME="tron"
 DATABASE_PASSWORD="1984"
 .env*.local
+
 DATABASE_USERNAME="tron"
 DATABASE_PASSWORD="1984"
 

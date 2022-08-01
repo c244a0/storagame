@@ -1,0 +1,29 @@
+.login {
+  font-size: 40px;
+  text-align: center;
+  color: #ffff;
+  padding: 20px;
+}
+
+.body {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(https://pakutaso.cdn.rabify.me/shared/img/thumb/kumakichi2381.jpg.webp?d=1420);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+}
+
+.actions {
+  margin: 20px;
+  text-align: center;
+}
+.actions input {
+  padding: 10px;
+  border-radius: 15px;
+  background-color: rgba(59,130,246,.5);
+  color: #ffff;
+  font-size: 20px;
+}
