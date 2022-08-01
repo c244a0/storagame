@@ -63,6 +63,16 @@
   margin-right: 5px;
 }
 
+/* フッター */
 .footer {
-
+  display: flex;
+  background-color: rgb(94, 94, 94);
+  color: #ffffff;
+  font-size: 20px;
 }
+
+.inquiry{
+  text-decoration: none;
+  color: black;
+}
+

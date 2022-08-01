@@ -1,26 +1,8 @@
-
-
-.signup {
+.login {
   font-size: 40px;
   text-align: center;
   color: #ffff;
   padding: 20px;
-}
-
-.field {
-  width: 50vh;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  margin-top: 20px;
-  color: #ffff;
-  font-size: 15px;
-  text-align: center;
-}
-
-.field input{
-  border-radius: 30px;
-  padding: 15px;
 }
 
 .body {
@@ -34,3 +16,14 @@
   overflow: scroll;
 }
 
+.actions {
+  margin: 20px;
+  text-align: center;
+}
+.actions input {
+  padding: 10px;
+  border-radius: 15px;
+  background-color: rgba(59,130,246,.5);
+  color: #ffff;
+  font-size: 20px;
+}
