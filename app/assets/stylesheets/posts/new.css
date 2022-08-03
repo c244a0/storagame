@@ -1,0 +1,50 @@
+.posts {
+  width: 100vw;
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(https://pakutaso.cdn.rabify.me/shared/img/thumb/maeda3gou1929009.jpg.webp?d=1420);
+  background-size: cover;
+  color: white;
+  overflow: scroll;
+}
+
+.upload{
+  font-size: 50px;
+}
+
+.post-field{
+  font-size: 30px;
+  text-align: center;
+}
+
+.text-area {
+  font-size: 20px;
+  border-radius: 20px;
+  resize: none;
+  padding: 10px;
+}
+
+.post-content {
+  font-size: 20px;
+  border-radius: 20px;
+  resize: none;
+  width: 600px;
+  height: 600px;
+  padding: 10px;
+}
+
+.submit {
+  text-align: center;
+}
+.submit input{
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  background-color: rgba(11, 48, 108, 0.7);
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 15px;
+  margin: 30px;
+}
