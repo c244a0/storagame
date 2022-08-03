@@ -1,0 +1,22 @@
+<div class="posts">
+  <h1 class="upload">投稿画面</h1>
+  <%= form_with model: @post, url: posts_path, local: true do |f| %>
+  <%# タイトル %>
+  <div class="post-field">
+    <p>タイトル名</p>
+    <%= f.text_area :title, class:"text-area", id:"title", placeholder:"タイトル ５０文字まで", maxlength:"50" %>
+  </div>
+  <div class="post-field">
+    <p>YoutubeのURL</p>
+    <%= f.text_area :youtube_url, class: "text-area", id: "youtube-url", placeholder: "URLを記入", maxlength:"50" %>
+  </div>
+  <div class="post-field">
+    <p>解説</p>
+    <%= f.text_area :content, class: 'post-content', id: "content", placeholder: "2000文字まで", maxlength: "2000" %>
+  </div>
+  <div class="submit">
+    <%= f.submit "送信" %>
+  </div>
+  <% end %>
+  
+</div>
