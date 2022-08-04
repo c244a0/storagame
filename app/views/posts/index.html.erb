@@ -1,2 +1,50 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<div class="posts-body">
+  <div class="sub-header">
+    <div class="info">あなたに近いレベルの人の動画</div>
+    <div class="more">もっと見る</div>
+  </div>
+  <div class="video">
+    <% @posts.first(3).shuffle.each do |post| %>
+      <div class="index">
+        <%= link_to "#" do %>
+          <img src="https://img.youtube.com/vi/<%= post.youtube_url %>/mqdefault.jpg" />
+        <% end %>
+        <div class="youtube-title">
+          <%= post.title %>
+        </div>
+    </div>
+    <% end %>
+  </div>
+  <div class="sub-header">
+    <div class="info">あなたに近いレベルの人の動画</div>
+    <div class="more">もっと見る</div>
+  </div>
+  <div class="video">
+    <% @posts.first(3).shuffle.each do |post| %>
+      <div class="index">
+        <%= link_to "#" do %>
+          <img src="https://img.youtube.com/vi/<%= post.youtube_url %>/mqdefault.jpg" />
+        <% end %>
+        <div class="youtube-title">
+          <%= post.title %>
+        </div>
+    </div>
+    <% end %>
+  </div>
+  <div class="sub-header">
+    <div class="info">あなたに近いレベルの人の動画</div>
+    <div class="more">もっと見る</div>
+  </div>
+  <div class="video">
+    <% @posts.first(3).shuffle.each do |post| %>
+      <div class="index">
+        <%= link_to "#" do %>
+          <img src="https://img.youtube.com/vi/<%= post.youtube_url %>/mqdefault.jpg" />
+        <% end %>
+        <div class="youtube-title">
+          <%= post.title %>
+        </div>
+    </div>
+    <% end %>
+  </div>
+</div>

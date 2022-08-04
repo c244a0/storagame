@@ -4,7 +4,7 @@
     <title>Storagame</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=0.7" />
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -15,6 +15,10 @@
         <%= link_to 'Storagame', root_path  %>
       </div>
       <div class="header-list">
+        <% if user_signed_in? %>
+          <a class="dark-mode" id="dark">ダークモード</a>
+        <% else %>
+        <% end %>
         <div class="post">
           <% if user_signed_in? %>
             <%= link_to '投稿する', new_post_path  %>
@@ -31,5 +35,16 @@
       <p>storagame</p>
       <%= link_to 'お問い合わせ', '#', class: "inquiry" %>
     </div>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <script type="text/javascript">
+    $("#dark").on('click',function(){
+      $(".posts-body").css('background-color', '#1e1e1e');
+      $(".posts-body").css('color', 'white');
+      $(this).hide();
+    });
+    </script>
   </body>
 </html>

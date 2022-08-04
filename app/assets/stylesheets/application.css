@@ -63,6 +63,9 @@
   margin-right: 5px;
 }
 
+@media screen and (max-width:960px){
+  .header-logo a{font-size: 15px;}  
+}
 /* フッター */
 .footer {
   display: flex;
@@ -70,6 +73,7 @@
   color: #ffffff;
   font-size: 20px;
   height: 30px;
+  width: 100vw;
 }
 
 .inquiry{

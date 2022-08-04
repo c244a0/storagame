@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   def index
+    @posts = Post.order('id DESC').limit(100)
   end
 
   def new
