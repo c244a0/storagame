@@ -1,17 +1,22 @@
+/* サイドバーと本体をflex関係に */
 .posts-body {
-  height: 1500px;
+  display: flex;
+  
+}
+.posts-index {
   overflow: scroll;
   background-color: white;
+  height: calc(100vh - 110px);
 }
 .sub-header {
   display: flex;
-  width: 80vw;
+  width: 70vw;
   justify-content: space-between;
   margin: 20px;
   font-size: 25px;
 }
 .video {
-  width: 100vw;
+  width: 80vw;
   display: flex;
   margin-top: 20px;
   flex-wrap: wrap;
