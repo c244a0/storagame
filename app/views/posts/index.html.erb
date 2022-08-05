@@ -12,7 +12,7 @@
             <img src="https://img.youtube.com/vi/<%= post.youtube_url %>/mqdefault.jpg" />
           <% end %>
           <div class="youtube-title">
-            <%= post.title %>
+            <%= link_to post.title, '#', method: :get %>
             <%= link_to post.user.nickname, '#', method: :get, class: "video-user"%>
           </div>
       </div>
@@ -29,7 +29,8 @@
             <img src="https://img.youtube.com/vi/<%= post.youtube_url %>/mqdefault.jpg" />
           <% end %>
           <div class="youtube-title">
-            <%= post.title %>
+            <%= link_to post.title, '#', method: :get%>
+            <%= link_to post.user.nickname, '#', method: :get, class: "video-user"%>
           </div>
       </div>
       <% end %>
@@ -45,7 +46,8 @@
             <img src="https://img.youtube.com/vi/<%= post.youtube_url %>/mqdefault.jpg" />
           <% end %>
           <div class="youtube-title">
-            <%= post.title %>
+            <%= link_to post.title, '#', method: :get%>
+            <%= link_to post.user.nickname, '#', method: :get, class: "video-user"%>
           </div>
       </div>
       <% end %>
