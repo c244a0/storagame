@@ -13,6 +13,7 @@
           <% end %>
           <div class="youtube-title">
             <%= post.title %>
+            <%= link_to post.user.nickname, '#', method: :get, class: "video-user"%>
           </div>
       </div>
       <% end %>
