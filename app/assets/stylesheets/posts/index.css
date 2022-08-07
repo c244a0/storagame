@@ -1,0 +1,53 @@
+/* サイドバーと本体をflex関係に */
+.posts-body {
+ display: flex;
+}
+.posts-index {
+  overflow: scroll;
+  background-color: white;
+  height: calc(100vh - 110px);
+}
+.sub-header {
+  display: flex;
+  width: 70vw;
+  justify-content: space-between;
+  margin: 20px;
+  font-size: 25px;
+}
+.video {
+  width: 80vw;
+  display: flex;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+}
+.video a {
+  padding: 20px;
+}
+
+.youtube-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.video-user {
+  margin-left: 30px;
+}
+
+@media screen and (max-width:960px){
+  .sub-header {
+    font-size: 10px;
+  }
+  .video img {
+    width: calc(50vw - 40px);
+  }
+  
+}
+
+@media screen and (max-width:500px) {
+  .posts-body {
+    overflow: scroll;
+  }
+}
