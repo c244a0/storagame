@@ -17,10 +17,10 @@
     <%= f.text_area :content, class: 'post-content', id: "content", placeholder: "2000文字まで", maxlength: "2000" %>
   </div>
   <div class="game-title">
-    <%= f.select :game, Game.all.map { |game| [game.game_title, game.id] } %>
+    <%= f.select :game, Game.all.map { |game| [game.game_title, game.id] }, { prompt: '選択してください' } %>
   </div>
   <div class="grade">
-    <%= f.select :grade, Grade.all.map { |grade| [grade.grades, grade.id] } %>
+    <%= f.select :grade, Grade.all.map { |grade| [grade.grades, grade.id] }, { prompt: '選択してください' } %>
   </div>
   <div class="submit">
     <%= f.submit "送信" %>
