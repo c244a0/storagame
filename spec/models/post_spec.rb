@@ -30,6 +30,16 @@ RSpec.describe Post, type: :model do
         @post.user = nil
         @post.valid?
         expect(@post.errors.full_messages).to include('User must exist')
+      end 
+      it 'game_idがないと投稿できない' do
+        @post.game = nil
+        @post.valid?
+        expect(@post.errors.full_messages).to include("Game must exist")
+      end
+      it 'grade_idがないと投稿できない' do
+        @post.grade = nil
+        @post.valid?
+        expect(@post.errors.full_messages).to include("Grade must exist")
       end
     end
   end
