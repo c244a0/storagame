@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
   def index
     @posts = Post.order('id DESC').limit(100)
   end
@@ -12,7 +13,7 @@ class PostsController < ApplicationController
     url = params[:post][:youtube_url]
     url = url.last(11)
     @post.youtube_url = url
-    if @post.save!
+    if @post.save
       redirect_to root_path
     else
       render :new
