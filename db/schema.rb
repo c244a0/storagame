@@ -10,15 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_01_120504) do
+ActiveRecord::Schema.define(version: 2022_08_08_120506) do
+
+  create_table "game_players", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "game_id", null: false
+    t.bigint "grade_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_id"], name: "index_game_players_on_game_id"
+    t.index ["grade_id"], name: "index_game_players_on_grade_id"
+    t.index ["user_id"], name: "index_game_players_on_user_id"
+  end
+
+  create_table "games", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "game_title", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "grades", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "grades", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.string "youtube_url"
     t.text "content", null: false
     t.bigint "user_id", null: false
+    t.bigint "game_id", null: false
+    t.bigint "grade_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_id"], name: "index_posts_on_game_id"
+    t.index ["grade_id"], name: "index_posts_on_grade_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -35,5 +62,10 @@ ActiveRecord::Schema.define(version: 2022_08_01_120504) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "game_players", "games"
+  add_foreign_key "game_players", "grades"
+  add_foreign_key "game_players", "users"
+  add_foreign_key "posts", "games"
+  add_foreign_key "posts", "grades"
   add_foreign_key "posts", "users"
 end

@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
   def index
     @posts = Post.order('id DESC').limit(100)
   end
@@ -22,6 +23,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, :youtube_url).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :content, :youtube_url).merge(user_id: current_user.id, game_id: params[:post][:game],
+                                                                       grade_id: params[:post][:grade])
   end
 end

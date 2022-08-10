@@ -1,6 +1,7 @@
 <div class="posts">
   <h1 class="upload">投稿画面</h1>
   <%= form_with model: @post, url: posts_path, local: true do |f| %>
+  <%= render "shared/errors_messages", model: f.object %>
   <%# タイトル %>
   <div class="post-field">
     <p>タイトル名</p>
@@ -14,9 +15,14 @@
     <p>解説</p>
     <%= f.text_area :content, class: 'post-content', id: "content", placeholder: "2000文字まで", maxlength: "2000" %>
   </div>
+  <div class="game-title">
+    <%= f.select :game, Game.all.map { |game| [game.game_title, game.id] }, { prompt: '選択してください' } %>
+  </div>
+  <div class="grade">
+    <%= f.select :grade, Grade.all.map { |grade| [grade.grades, grade.id] }, { prompt: '選択してください' } %>
+  </div>
   <div class="submit">
     <%= f.submit "送信" %>
   </div>
   <% end %>
-  
 </div>

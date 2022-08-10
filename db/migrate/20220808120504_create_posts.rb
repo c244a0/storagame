@@ -5,6 +5,9 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.string :youtube_url 
       t.text   :content, null: false
       t.references :user, null: false, foreign_key: true
+      t.references :game, null: false, foreign_key: true
+      t.references :grade, null: false, foreign_key: true
+      t.references
       t.timestamps
     end
   end

@@ -4,5 +4,7 @@ FactoryBot.define do
     youtube_url { Faker::Internet.url }
     content { Faker::Lorem.sentence }
     association :user
+    association :game
+    association :grade
   end
 end
