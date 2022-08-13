@@ -18,7 +18,7 @@
             <p>未設定</p>
           <% end %>
         </div>
-        <%= f.select :grade_id, Grade.all.map { |grade| [grade.grades, grade.id] }, { prompt: '選択してください' } %>
+        <%= f.select :grade_id, Grade.all.map { |grade| [grade.grades, grade.id] }, { prompt: '選択してください' }, include_blank: true %>
         <div class="actions" id="game-maneger-btn">
           <%= f.submit "登録" %>
         </div>

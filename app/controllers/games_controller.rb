@@ -8,7 +8,10 @@ class GamesController < ApplicationController
   def create
     @game_players = GamePlayer.new(game_player_params)
     @already_game_players = GamePlayer.where(user_id: current_user.id, game_id: params[:game_player][:game_id])
-    if @already_game_players.present?
+    if @game_players.grade_id.blank?
+      redirect_to new_game_path
+      flash[:alert] = '階級が記入されていません'
+    elsif @already_game_players.present?
       @already_game_players.update(game_player_params)
       redirect_to new_game_path
       flash[:notice] = '更新しました'
