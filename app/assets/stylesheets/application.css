@@ -37,6 +37,7 @@
   align-items: center;
 }
 
+
 .header-logo a{
   font-size: 20px;
   color: #ffffff;
@@ -52,7 +53,7 @@
   align-items: center;
 }
 
-.header-list a {
+.post a{
   font-size: 20px;
   color: #ffffff;
   text-decoration: none;
@@ -62,13 +63,66 @@
   border-radius: 5px;
   margin-right: 5px;
 }
+
+#dark {
+  color: black;
+  margin: 10px;
+}
+
 #light {
   display: none;
+  color: #ffffff;
+  margin: 10px;
 }
+
+/* バーボタン関連 */
+#bars {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+}
+
+#bars:hover {
+  opacity: 0.4;
+}
+
+#bars-none {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  display: none;
+}
+
+#bars-none:hover {
+  opacity: 0.4;
+}
+
+.show-list {
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  height: 200px;
+  width: 100px;
+  z-index: 10;
+}
+
+.show-btn a{
+  display: block;
+  font-size: 5px;
+  color: black;
+  background-color: #708090;
+  padding: 10px;
+
+}
+
 
 @media screen and (max-width:960px){
   .header-logo a{font-size: 15px;}  
   .header-list a {font-size: 15px;}
+}
+
+.hidden{
+  display: none;
 }
 /* フッター */
 .footer {
@@ -80,8 +134,30 @@
   width: 100vw;
 }
 
+.footer-title{
+  margin-left: 15px;
+}
+
 .inquiry{
   text-decoration: none;
   color: black;
+  margin-left: 50px;
 }
 
+.show-list {
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  height: 200px;
+  width: 100px;
+  z-index: 10;
+}
+
+.show-btn {
+  display: block;
+  font-size: 5px;
+  color: black;
+  background-color: #ffffff;
+  padding: 10px;
+
+}

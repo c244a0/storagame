@@ -6,5 +6,6 @@ class CreateGamePlayers < ActiveRecord::Migration[6.0]
       t.references :grade, null: false, foreign_key: true
       t.timestamps
     end
+    add_index  :game_players, [:user_id, :game_id], unique: true
   end
 end
