@@ -11,7 +11,13 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     url = params[:post][:youtube_url]
-    url = url.last(11)
+    if @post.youtube_url[0..16] == "https://youtu.be/"
+      url = url.last(11)
+    elsif @post.youtube_url[43] == "&"
+      url = url[32..42]
+    else
+      url = url.last(11)
+    end
     @post.youtube_url = url
     if @post.save
       redirect_to root_path
