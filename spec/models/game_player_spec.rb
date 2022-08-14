@@ -16,6 +16,7 @@ RSpec.describe GamePlayer, type: :model do
         @game_player.user_id = nil
         @game_player.valid?
         binding.pry
+        expect(@game_player.errors.full_messages).to include("User can't be blank")
       end
     end
   end
