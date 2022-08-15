@@ -1,28 +1,41 @@
 .post-show {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 80vw;
+  width: calc(100vw - 15vw);
   overflow: scroll;
 }
 
 .post-show-title {
-  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 15px;
+  height: 30px;
   width: 80vw;
 }
 
+.post-nickname {
+  margin: 10px 0;
+}
+
 .youtube-cotainer iframe{
-  margin-top: 30px;
+  margin-top: 20px;
+  margin-left: 20px;
   width: 80vw;
   aspect-ratio: 16 / 9;
 }
 .post-show-content {
+  margin-top: 35px;
   overflow: scroll;
+  border-top: 1px solid #444444;
+  border-bottom: 1px solid #444444;
+  width:84.9vw;
+  z-index: -10;
+  height: 20vh;
+  font-size: 15px;
 }
-@media screen and (min-width:780px){
-  .post-show-title {width: 530px;}
+@media screen and (min-width:600px){
+  .post-show-title { width: 530px; }
   .youtube-cotainer iframe{
-    width: 530px;
+    width: 500px;
     aspect-ratio: 16 / 9;
   }
 }

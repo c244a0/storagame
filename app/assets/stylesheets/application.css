@@ -30,8 +30,7 @@
 }
 
 .header-logo {
-  width: 20vw;
-
+  width: 15vw;
   background-color: black;
   display: flex;
   justify-content: center;
@@ -45,7 +44,7 @@
 }
 
 .header-list {
-  width: calc(100vw - 17vw);
+  width: calc(100vw - 15vw);
   background-color: #444444;
   display: flex;
   justify-content: right;
