@@ -1,0 +1,14 @@
+<div class="posts-body">
+  <%= render "shared/side_bar" %>
+  <div class="post-show">
+    <div class="youtube-cotainer">
+    <iframe src="https://www.youtube.com/embed/<%= @post.youtube_url %>" class="youtube" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="post-show-title">
+      <%= @post.title %>
+    </div>
+    <div class="post-show-content">
+      <%= @post.content %>
+    </div>
+  </div>
+</div>

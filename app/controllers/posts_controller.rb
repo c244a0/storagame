@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     url = params[:post][:youtube_url]
     if @post.youtube_url[0..16] == "https://youtu.be/"
-      url = url.last(11)
+      url = url[17..27]
     elsif @post.youtube_url[43] == "&"
       url = url[32..42]
     else
@@ -24,6 +24,10 @@ class PostsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def  show
+    @post = Post.find(params[:id])
   end
 
   private
