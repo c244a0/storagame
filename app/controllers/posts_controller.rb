@@ -37,6 +37,7 @@ class PostsController < ApplicationController
     @post.update(post_params)
     if @post.save
       redirect_to post_path(@post.id)
+      flash[:notice] = '更新しました'
     else
       render :edit
     end
