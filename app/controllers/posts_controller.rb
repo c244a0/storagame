@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   def index
     @posts = Post.order('id DESC').limit(100)
   end
@@ -27,7 +28,26 @@ class PostsController < ApplicationController
   end
 
   def  show
-    @post = Post.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    @post.update(post_params)
+    if @post.save
+      redirect_to post_path(@post.id)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    if @post.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
   end
 
   private
@@ -35,5 +55,8 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :content, :youtube_url).merge(user_id: current_user.id, game_id: params[:post][:game],
                                                                        grade_id: params[:post][:grade])
+  end
+  def set_post
+    @post = Post.find(params[:id])
   end
 end

@@ -16,6 +16,17 @@
   margin: 10px 0;
 }
 
+.posts-editer {
+  margin: 30px;
+  width: 78vw;
+  text-align: right;
+}
+
+.posts-editer a{
+  text-decoration: none;
+  color: black;
+}
+
 .youtube-cotainer iframe{
   margin-top: 20px;
   margin-left: 20px;
@@ -32,8 +43,10 @@
   height: 20vh;
   font-size: 15px;
 }
+
 @media screen and (min-width:600px){
   .post-show-title { width: 530px; }
+  .posts-editer { width: 530px; }
   .youtube-cotainer iframe{
     width: 500px;
     aspect-ratio: 16 / 9;

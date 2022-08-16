@@ -10,6 +10,12 @@
     <div class="post-nickname">
       <%= @post.user.nickname %>
     </div>
+    <div class="posts-editer">
+      <% if user_signed_in? && current_user.id == @post.user_id %>
+        <%= link_to "編集", edit_post_path, method: :get, class: "post-edit" %>
+        <%= link_to "削除", post_path, method: :delete, class:"post-destroy" %>
+      <% end %>
+    </div>
     <div class="post-status">
       <%= @post.game.game_title %>
       <%= @post.grade.grades %>
