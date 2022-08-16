@@ -1,11 +1,13 @@
 /* サイドバーと本体をflex関係に */
 .posts-body {
- display: flex;
+  display: flex;
+  height: calc(100vh - 110px);
+  width: 100vw;
 }
 .posts-index {
   overflow: scroll;
   background-color: white;
-  height: calc(100vh - 110px);
+  color: black;
 }
 .sub-header {
   display: flex;
@@ -14,22 +16,29 @@
   margin: 20px;
   font-size: 25px;
 }
-.video {
+.videos {
   width: 80vw;
   display: flex;
   margin-top: 20px;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-
 }
-.video a {
-  padding: 20px;
+.video {
+  margin: 10px;
 }
 
 .youtube-title {
   display: flex;
   justify-content: space-between;
+}
+
+.youtube-title a {
+  text-decoration: none;
+  color: black;
+  overflow: hidden;
+  width: 150px;
+  height: 70px;
 }
 
 .video-user {
@@ -40,7 +49,7 @@
   .sub-header {
     font-size: 10px;
   }
-  .video img {
+  .video {
     width: calc(50vw - 40px);
   }
   
