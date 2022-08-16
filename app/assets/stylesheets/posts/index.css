@@ -3,11 +3,10 @@
   display: flex;
   height: calc(100vh - 110px);
   width: 100vw;
+  color: black;
 }
 .posts-index {
   overflow: scroll;
-  background-color: white;
-  color: black;
 }
 .sub-header {
   display: flex;
