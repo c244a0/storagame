@@ -37,9 +37,9 @@
       </div>
     </div>
     <ul class="show-list hidden">
-      <%= link_to 'ユーザー情報編集', edit_user_registration_path, class: "show-btn"%>
-      <%= link_to 'ゲーム情報編集' , new_game_path, class: "show-btn", method: :get %>
       <% if user_signed_in? %>
+        <%= link_to 'ユーザー情報編集', edit_user_registration_path, class: "show-btn"%>
+        <%= link_to 'ゲーム情報編集' , new_game_path, class: "show-btn", method: :get %>
         <%= link_to '投稿する', new_post_path, class: "show-btn"  %>
         <%= link_to 'ログアウト', destroy_user_session_path, class: "show-btn", method: :delete %>
       <% else %>

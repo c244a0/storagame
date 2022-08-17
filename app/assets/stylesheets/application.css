@@ -107,14 +107,10 @@
   flex-direction: column;
   position: absolute;
   right: 0;
-}
-
-.show-btn a{
   display: block;
   font-size: 5px;
   color: black;
-  padding: 10px 0;
-  width: 110px;
+  width: 150px;
   text-decoration: none;
 }
 
@@ -163,5 +159,4 @@
   color: black;
   background-color: #ffffff;
   padding: 10px;
-
 }
