@@ -21,14 +21,12 @@
 
 .text-area {
   font-size: 20px;
-  border-radius: 20px;
   resize: none;
-  padding: 10px;
+  width: 600px;
 }
 
 .post-content {
   font-size: 20px;
-  border-radius: 20px;
   resize: none;
   width: 600px;
   height: 600px;
@@ -68,4 +66,5 @@ select {
 @media screen and (max-width:700px){
   .post-content { width: 400px;
                   height: 400px;}
+  .text-area    { width: 400px;}
   }

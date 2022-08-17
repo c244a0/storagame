@@ -1,0 +1,55 @@
+.post-show {
+  width: calc(100vw - 15vw);
+  overflow: scroll;
+}
+
+.post-show-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 15px;
+  height: 30px;
+  width: 80vw;
+}
+
+.post-nickname {
+  margin: 10px 0;
+}
+
+.posts-editer {
+  margin: 30px;
+  width: 78vw;
+  text-align: right;
+}
+
+.posts-editer a{
+  text-decoration: none;
+  color: black;
+}
+
+.youtube-cotainer iframe{
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 80vw;
+  aspect-ratio: 16 / 9;
+}
+.post-show-content {
+  margin-top: 35px;
+  overflow: scroll;
+  border-top: 1px solid #444444;
+  border-bottom: 1px solid #444444;
+  width:84.9vw;
+  z-index: -10;
+  height: 20vh;
+  font-size: 15px;
+}
+
+@media screen and (min-width:600px){
+  .post-show-title { width: 530px; }
+  .posts-editer { width: 530px; }
+  .youtube-cotainer iframe{
+    width: 500px;
+    aspect-ratio: 16 / 9;
+  }
+}
+

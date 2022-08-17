@@ -26,11 +26,11 @@
 .header {
   width: 100vw;
   display: flex;
+  height: 80px;
 }
 
 .header-logo {
-  width: 20vw;
-  height: 80px;
+  width: 15vw;
   background-color: black;
   display: flex;
   justify-content: center;
@@ -45,8 +45,7 @@
 }
 
 .header-list {
-  width: calc(100vw - 17vw);
-  height: 80px;
+  width: calc(100vw - 15vw);
   background-color: #444444;
   display: flex;
   justify-content: right;
