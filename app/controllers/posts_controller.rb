@@ -28,6 +28,8 @@ class PostsController < ApplicationController
   end
 
   def  show
+    @user = User.find(params[:id])
+    @users = User.where.not(id: current_user.id)
   end
 
   def edit
@@ -49,6 +51,16 @@ class PostsController < ApplicationController
     else
       render :show
     end
+  end
+
+  def followings
+    user = User.find(params[:id])
+    @users = user.followings
+  end
+
+  def followers
+    user = User.find(params[:id])
+    @users = user.followers
   end
 
   private
