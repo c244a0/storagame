@@ -13,9 +13,19 @@ RSpec.describe GamePlayer, type: :model do
     end
     context '登録できない場合' do
       it 'user_idがないと登録できない' do
-        @game_player.user_id = nil
+        @game_player.user = nil
         @game_player.valid?
-        expect(@game_player.errors.full_messages).to include("User can't be blank")
+        expect(@game_player.errors.full_messages).to include("User must exist")
+      end
+      it 'user_idがないと登録できない' do
+        @game_player.game = nil
+        @game_player.valid?
+        expect(@game_player.errors.full_messages).to include("Game must exist")
+      end
+      it 'user_idがないと登録できない' do
+        @game_player.grade = nil
+        @game_player.valid?
+        expect(@game_player.errors.full_messages).to include("Grade must exist")
       end
     end
   end
