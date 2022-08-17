@@ -15,8 +15,9 @@
   margin: 20px;
   font-size: 25px;
 }
+
 .videos {
-  width: 80vw;
+  width: 85vw;
   display: flex;
   margin-top: 20px;
   flex-wrap: wrap;

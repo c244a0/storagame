@@ -1,0 +1,27 @@
+<div class="game-maneger-body">
+  <h1 class="game-maneger-title"><%= current_user.nickname %>さんのゲーム情報登録</h1>
+  <% @games.each do |game|%>
+    <%= form_with model: @game_players, url: games_path, local: true do |f| %>
+      <%= render "shared/errors_messages", model: f.object %>
+      <div class="game-title"> 
+        <%= game.game_title %>
+        <%= f.hidden_field :game_id, :value => game.id %>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+      </div>
+      <div class="grade">
+        <div class="graded">
+          <p>現在の階級</p>
+          <% already_game_player = GamePlayer.find_by(user_id: current_user.id, game_id: game.id) %>
+          <% if already_game_player.present? %>
+          <%= f.select :grade_id, Grade.all.map { |grade| [grade.grades, grade.id] }, { prompt: '選択してください', selected: already_game_player.grade_id }, include_blank: true %>
+          <% else %>
+          <%= f.select :grade_id, Grade.all.map { |grade| [grade.grades, grade.id] }, { prompt: '選択してください' }, include_blank: true %>
+          <% end %>
+        </div>
+        <div class="actions" id="game-maneger-btn">
+          <%= f.submit "登録" %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

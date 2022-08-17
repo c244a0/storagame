@@ -1,7 +1,7 @@
 <div class="body">
-  <div class="signup">Sign Up</div>
+  <div class="user-title">サインアップ</div>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
+    <%= render "devise/shared/error_messages", resource: resource, class: "error-message" %>
 
     <div class="field">
       <%= f.label :nickname %><br />
@@ -16,7 +16,7 @@
     <div class="field">
       <%= f.label :password %>
       <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <em>(<%= @minimum_password_length %> 文字英数字）</em>
       <% end %><br />
       <%= f.password_field :password, autocomplete: "new-password" %>
     </div>

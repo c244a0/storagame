@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2022_08_08_120506) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["game_id"], name: "index_game_players_on_game_id"
     t.index ["grade_id"], name: "index_game_players_on_grade_id"
+    t.index ["user_id", "game_id"], name: "index_game_players_on_user_id_and_game_id", unique: true
     t.index ["user_id"], name: "index_game_players_on_user_id"
   end
 
