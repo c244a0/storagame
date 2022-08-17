@@ -97,22 +97,26 @@
   opacity: 0.4;
 }
 
+
+
+.show-btn {
+  background-color: #444444;
+  border: 1px solid #708090;
+}
+
 .show-list {
   flex-direction: column;
   position: absolute;
   right: 0;
-  height: 200px;
-  width: 100px;
-  z-index: 10;
 }
 
 .show-btn a{
   display: block;
   font-size: 5px;
   color: black;
-  background-color: #708090;
-  padding: 10px;
-
+  padding: 10px 0;
+  width: 110px;
+  text-decoration: none;
 }
 
 
@@ -124,6 +128,7 @@
 .hidden{
   display: none;
 }
+
 /* フッター */
 .footer {
   display: flex;
