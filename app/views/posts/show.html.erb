@@ -12,7 +12,6 @@
     </div>
     <div class="follow">
       <% if @user == current_user %>
-      <% else %>
         <%= render 'relationships/follow_button', user: @user %>
       <% end %>
     </div>
