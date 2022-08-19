@@ -1,5 +1,6 @@
 class Game < ApplicationRecord
-  has_many :users, through: :users
-  has_many :grades, through: :users
+  has_many :game_player
+  has_many :users, through: :game_players
+  has_many :grades, through: :game_players
   has_many :posts
 end

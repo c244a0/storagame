@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :nickname, presence: true
-
+  
   has_many :game, through: :game_players
   has_many :grades, through: :game_players
 
@@ -22,4 +22,8 @@ class User < ApplicationRecord
   def is_followed_by?(user)
     reverse_of_relationships.find_by(following_id: user.id).present?
   end
+  has_many :game_player
+  has_many :game, through: :game_players, dependent: :destroy
+  has_many :grades, through: :game_players, dependent: :destroy
+  has_many :posts, dependent: :destroy
 end

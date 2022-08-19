@@ -1,4 +1,4 @@
-.signup {
+.user-title {
   font-size: 40px;
   text-align: center;
   color: #ffff;
@@ -6,7 +6,7 @@
 }
 
 .field {
-  width: 30vh;
+  width: 35vh;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -17,7 +17,7 @@
 }
 
 .field label {
-  font-size: 30px;
+  font-size: 21px;
 }
 
 .field input{

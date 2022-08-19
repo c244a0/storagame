@@ -1,0 +1,33 @@
+.game-maneger-title {
+  font-size: 30px;
+  text-align: center;
+  color: #ffff;
+  padding: 20px;
+}
+.game-maneger-body{
+  background-image: url(https://pakutaso.cdn.rabify.me/shared/img/thumb/yamasha1102019.jpg.webp?d=1420);
+  background-size: cover;
+  width: 100vw;
+  height: calc(100vh - 110px);
+  overflow: scroll;
+}
+.game-title {
+  font-size: 30px;
+  color: white;
+}
+
+.grade {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.graded {
+  font-size: 15px;
+  color: white;
+  text-align: center;
+}
+
+#game_player_grade {
+  width: 20vw;
+}

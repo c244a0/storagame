@@ -7,6 +7,7 @@
     <p>タイトル名</p>
     <%= f.text_area :title, class:"text-area", id:"title", placeholder:"タイトル ５０文字まで", maxlength:"50" %>
   </div>
+  <%# youtubeのURL %>
   <div class="post-field">
     <p>YoutubeのURL</p>
     <%= f.text_area :youtube_url, class: "text-area", id: "youtube-url", placeholder: "URLを記入", maxlength:"50" %>
@@ -15,9 +16,11 @@
     <p>解説</p>
     <%= f.text_area :content, class: 'post-content', id: "content", placeholder: "2000文字まで", maxlength: "2000" %>
   </div>
+  <%# 投稿するゲーム名選択 %>
   <div class="game-title">
     <%= f.select :game, Game.all.map { |game| [game.game_title, game.id] }, { prompt: '選択してください' } %>
   </div>
+  <%# どの階級に向けて投稿したいか %>
   <div class="grade">
     <%= f.select :grade, Grade.all.map { |grade| [grade.grades, grade.id] }, { prompt: '選択してください' } %>
   </div>
