@@ -12,13 +12,13 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     url = params[:post][:youtube_url]
-    if @post.youtube_url[0..16] == "https://youtu.be/"
-      url = url[17..27]
-    elsif @post.youtube_url[43] == "&"
-      url = url[32..42]
-    else
-      url = url.last(11)
-    end
+    url = if @post.youtube_url[0..16] == 'https://youtu.be/'
+            url[17..27]
+          elsif @post.youtube_url[43] == '&'
+            url[32..42]
+          else
+            url.last(11)
+          end
     @post.youtube_url = url
     if @post.save
       redirect_to root_path
@@ -27,9 +27,8 @@ class PostsController < ApplicationController
     end
   end
 
-  def  show
-    @user = User.find(params[:id])
-    @users = User.where.not(id: current_user.id)
+  def show
+    @user = @post.user
   end
 
   def edit
@@ -53,22 +52,13 @@ class PostsController < ApplicationController
     end
   end
 
-  def followings
-    user = User.find(params[:id])
-    @users = user.followings
-  end
-
-  def followers
-    user = User.find(params[:id])
-    @users = user.followers
-  end
-
   private
 
   def post_params
     params.require(:post).permit(:title, :content, :youtube_url).merge(user_id: current_user.id, game_id: params[:post][:game],
                                                                        grade_id: params[:post][:grade])
   end
+
   def set_post
     @post = Post.find(params[:id])
   end

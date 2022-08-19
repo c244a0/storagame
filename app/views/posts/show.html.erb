@@ -10,8 +10,11 @@
     <div class="post-nickname">
       <%= @post.user.nickname %>
     </div>
-    <div class="post-follow">
-      
+    <div class="follow">
+      <% if @user == current_user %>
+      <% else %>
+        <%= render 'relationships/follow_button', user: @user %>
+      <% end %>
     </div>
     <div class="posts-editer">
       <% if user_signed_in? && current_user.id == @post.user_id %>
@@ -26,6 +29,5 @@
     <div class="post-show-content">
       <%= @post.content %>
     </div>
-
   </div>
 </div>

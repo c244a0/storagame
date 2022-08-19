@@ -29,7 +29,8 @@
         <% end %>
         <div class="post">
           <% if user_signed_in? %>
-            <%= link_to '投稿する', new_post_path  %>
+          <%= link_to '投稿する', new_post_path  %>
+            <%= link_to current_user.nickname, users_path(current_user.id)  %>
             <%= link_to 'ログアウト', destroy_user_session_path, class: "logout", method: :delete %>
           <% else %>
             <%= link_to 'ログイン', new_user_session_path, class: "login" %>
