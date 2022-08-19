@@ -12,7 +12,6 @@ RSpec.describe Relationship, type: :model do
         expect(@follow).to be_valid
       end
     end
-
     context 'フォローできない場合' do
       it 'follower_idがないとフォローできない' do
         @follow.follower_id = nil

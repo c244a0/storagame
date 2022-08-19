@@ -8,3 +8,9 @@
   flex-direction: column;
   align-items: center;
 }
+
+@media screen and (max-width:960px) {
+  .side-bar {
+    font-size: 15px;
+  }
+}

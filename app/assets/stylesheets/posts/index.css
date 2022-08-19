@@ -10,7 +10,6 @@
 }
 .sub-header {
   display: flex;
-  width: 70vw;
   justify-content: space-between;
   margin: 20px;
   font-size: 25px;
@@ -25,38 +24,45 @@
   justify-content: center;
 }
 .video {
-  margin: 10px;
+  margin: 20px;
 }
 
 .youtube-title {
   display: flex;
   justify-content: space-between;
+  width: 320px;
 }
 
 .youtube-title a {
   text-decoration: none;
   color: black;
   overflow: hidden;
-  width: 150px;
-  height: 70px;
+  height: 40px;
+  font-size: 20px;
 }
 
-.video-user {
-  margin-left: 30px;
-}
 
 @media screen and (max-width:960px){
   .sub-header {
     font-size: 10px;
   }
   .video {
-    width: calc(50vw - 40px);
+    width: calc(70vw - 40px);
   }
-  
 }
 
 @media screen and (max-width:500px) {
   .posts-body {
     overflow: scroll;
+  }
+}
+
+@media screen and (max-width:400px){
+  .video img {
+    width: 250px;
+    aspect-ratio: 16 / 9;
+  }
+  .youtube-title {
+    width: 250px;
   }
 }

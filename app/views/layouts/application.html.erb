@@ -23,16 +23,14 @@
       <div class="header-list">
         <% if user_signed_in? %>
           <% if current_page?(root_path) || current_page?(posts_path)%>
-            <a class="dark-mode" id="dark">ダークモード</a>
-            <a class="dark-mode" id="light" >ライトモード</a>
+            <%= link_to current_user.nickname, users_path(current_user.id)  %>
+            <button class="dark-mode" id="dark">ダークモード</button>
+            <button class="dark-mode" id="light" >ライトモード</button>
           <% end %>
         <% else %>
         <% end %>
         <div class="post">
           <% if user_signed_in? %>
-          <%= link_to '投稿する', new_post_path  %>
-            <%= link_to current_user.nickname, users_path(current_user.id)  %>
-            <%= link_to 'ログアウト', destroy_user_session_path, class: "logout", method: :delete %>
           <% else %>
             <%= link_to 'ログイン', new_user_session_path, class: "login" %>
             <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
@@ -54,7 +52,9 @@
         <%= link_to '新規登録', new_user_registration_path, class: "show-btn" %>
       <% end %>
     </ul>
-    <%= render 'shared/flash' %>
+    <div class="flash">
+      <%= render 'shared/flash' %>
+    </div>
     <%= yield %>
     <div class="footer">
       <p class="footer-title">storagame</p>
