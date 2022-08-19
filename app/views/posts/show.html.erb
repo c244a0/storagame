@@ -10,6 +10,11 @@
     <div class="post-nickname">
       <%= @post.user.nickname %>
     </div>
+    <div class="follow">
+      <% if @user == current_user %>
+        <%= render 'relationships/follow_button', user: @user %>
+      <% end %>
+    </div>
     <div class="posts-editer">
       <% if user_signed_in? && current_user.id == @post.user_id %>
         <%= link_to "編集", edit_post_path, method: :get, class: "post-edit" %>
@@ -23,6 +28,5 @@
     <div class="post-show-content">
       <%= @post.content %>
     </div>
-
   </div>
 </div>

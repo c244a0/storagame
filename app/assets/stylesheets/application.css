@@ -52,26 +52,26 @@
   align-items: center;
 }
 
-.post a{
-  font-size: 20px;
-  color: #ffffff;
+.header-list a{ 
   text-decoration: none;
-  padding: 5px;
-  background-color: #708090;
-  border: 1px solid #ffffff;
-  border-radius: 5px;
+  font-size: 20px;
+  color: black;
   margin-right: 5px;
 }
 
 #dark {
   color: black;
   margin: 10px;
+  background-color: #444444;
+  font-size: 20px;
 }
 
 #light {
   display: none;
   color: #ffffff;
   margin: 10px;
+  background-color: #444444;
+  font-size: 20px;
 }
 
 /* バーボタン関連 */
@@ -159,4 +159,9 @@
   color: black;
   background-color: #ffffff;
   padding: 10px;
+}
+@media screen and (max-width:500px){
+  .header-logo a{
+    font-size: 5px;
+  }
 }
