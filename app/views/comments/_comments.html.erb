@@ -1,0 +1,11 @@
+<% @comments.each  do |comment| %>
+  <div class="comments">
+    <div class="comment">
+        <p class="comment-text"><%= comment.text %></p>
+        <p class="comment-name"><%= comment.user.nickname unless comment.user.blank? %></p>
+        <% if user_signed_in? && current_user.id == comment.user_id %>
+          <%= link_to "削除", post_comment_path(@post.id, comment.id), method: :delete, class: "comment-delete" %>
+        <% end %>
+    </div>
+  </div>
+<% end %>
