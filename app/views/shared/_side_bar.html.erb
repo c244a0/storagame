@@ -1,24 +1,10 @@
 <div class="side-bar">
   <div class="game-list">
-    <ul>ゲーム名
-      <li>初級</li>
-      <li>中級</li>
-      <li>上級</li>
-    </ul>
+    <% @games.each do |game|  %>
+      <ul class="side-game-title"><%= link_to game.game_title, games_path(game.id) %></ul>
+      <% @grades.each do |grade| %>
+      <li><%= link_to grade.grades, '#' %></li>
+      <% end %>
+    <% end %>
   </div>
-  <div class="game-list">
-    <ul>ゲーム名
-      <li>初級</li>
-      <li>中級</li>
-      <li>上級</li>
-    </ul>
-  </div>
-  <div class="game-list">
-    <ul>ゲーム名
-      <li>初級</li>
-      <li>中級</li>
-      <li>上級</li>
-    </ul>
-  </div>
-  
 </div>

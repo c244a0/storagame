@@ -11,7 +11,7 @@
       <%= @post.user.nickname %>
     </div>
     <div class="follow">
-      <% if @user == current_user %>
+      <% if @user != current_user %>
         <%= render 'relationships/follow_button', user: @user %>
       <% end %>
     </div>

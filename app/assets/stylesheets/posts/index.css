@@ -7,12 +7,15 @@
 }
 .posts-index {
   overflow: scroll;
+  width: 85vw;
 }
 .sub-header {
   display: flex;
   justify-content: space-between;
-  margin: 20px;
+  margin-top: 20px;
   font-size: 25px;
+  width: 80vw;
+  margin: 30px;
 }
 
 .videos {

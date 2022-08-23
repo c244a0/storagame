@@ -10,6 +10,7 @@ $(document).on('turbolinks:load', function() {
   $("#light").on('click',function(){
     $(".posts-body").css('background-color', 'white');
     $(".posts-body").css('color', 'black');
+    $(".youtube-title").find("a").css('color', 'black');
     $(".post-show").find("a").css('color', 'black');
     $(this).css('display', 'none');
     $('#dark').css('display', 'block');

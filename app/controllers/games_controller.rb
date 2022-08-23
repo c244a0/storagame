@@ -1,5 +1,15 @@
 class GamesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
+  before_action :set_game
+
+  def index
+    binding.pry
+    @game = Game.find(params[:id])
+    
+    @posts = Post.where(game_id: @game.id)
+    
+  end
+
   def new
     @game_players = GamePlayer.new
     @games = Game.all
@@ -30,4 +40,5 @@ class GamesController < ApplicationController
     params.require(:game_player).permit(:user_id, :game_id, :grade_id).merge(user_id: current_user.id,
                                                                              game_id: params[:game_player][:game_id], grade_id: params[:game_player][:grade_id])
   end
+
 end
