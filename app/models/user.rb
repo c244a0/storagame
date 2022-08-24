@@ -5,9 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :nickname, presence: true
 
-  has_many :game, through: :game_players
-  has_many :grades, through: :game_players
-
   # フォローする側から中間テーブルへのアソシエーション
   has_many :relationships, foreign_key: :following_id
   # フォローする側からフォローされたユーザを取得する

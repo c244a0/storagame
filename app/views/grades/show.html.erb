@@ -1,0 +1,25 @@
+<div class="posts-body">
+  <%= render "shared/side_bar" %>
+  <div class="posts-index">
+    <div class="sub-header">
+      <div class="info"><%= @game.game_title %>の動画</div>
+      <div class="more">もっと見る</div>
+    </div>
+    <div class="videos">
+      <% @posts.each do |post| %>
+        <div class="video">
+          <%= link_to post_path(post.id) do %>
+            <img src="https://img.youtube.com/vi/<%= post.youtube_url %>/mqdefault.jpg" />
+          <% end %>
+          <div class="youtube-title">
+            <%= link_to post.title, post_path(post.id), method: :get %>
+            <%= link_to post.user.nickname, user_path(post.user.id), method: :get, class: "video-user"%>
+          </div>
+          <div class="video-status">
+            <%= post.game.game_title %><%= post.grade.grades %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

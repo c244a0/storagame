@@ -29,6 +29,25 @@
         <% i += 1 %>
         <% end %>
       <% end %>
+      <% else %>
+      <p class="no-login">ログイン/サインアップをしてください</p>
     <% end %>
+    <div class="sub-header">
+      <div class="info">動画一覧</div>
+      <div class="more">もっと見る</div>
+    </div>
+    <div class="videos">
+      <% @posts.first(6).shuffle.each do |post| %>
+        <div class="video">
+          <%= link_to post_path(post.id) do %>
+            <img src="https://img.youtube.com/vi/<%= post.youtube_url %>/mqdefault.jpg" />
+          <% end %>
+          <div class="youtube-title">
+            <%= link_to post.title, post_path(post.id), method: :get %>
+            <%= link_to post.user.nickname, user_path(post.user.id), method: :get, class: "video-user"%>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

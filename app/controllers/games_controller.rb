@@ -2,12 +2,9 @@ class GamesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
   before_action :set_game
 
-  def index
-    binding.pry
+  def show
     @game = Game.find(params[:id])
-    
     @posts = Post.where(game_id: @game.id)
-    
   end
 
   def new

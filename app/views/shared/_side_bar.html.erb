@@ -1,10 +1,14 @@
 <div class="side-bar">
   <div class="game-list">
-    <% @games.each do |game|  %>
-      <ul class="side-game-title"><%= link_to game.game_title, games_path(game.id) %></ul>
-      <% @grades.each do |grade| %>
-      <li><%= link_to grade.grades, '#' %></li>
+    <% i = 0 %>
+    <% @games.length.times do  %>
+      <% n = 0 %>
+      <ul class="side-game-title"><%= link_to @games[i].game_title, game_path(@games[i].id) %></ul>
+      <% @grades.length.times do %>
+        <li><%= link_to @grades[n].grades, grade_path(@grades[n].id, game_id: @games[i].id) %></li>
+        <% n += 1 %>
       <% end %>
+      <% i += 1 %>
     <% end %>
   </div>
 </div>
