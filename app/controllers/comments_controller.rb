@@ -2,8 +2,8 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = Comment.new(comment_params)
-    @comments = Commnet.where(post_id: @post.id)
     if @comment.save
+      @comments = Comment.where(post_id: @post.id)
       flash[:notice] = 'コメントを投稿しました'
     else
       flash[:alret] = 'コメントの投稿失敗しました'
