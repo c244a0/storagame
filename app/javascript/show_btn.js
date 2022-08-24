@@ -1,4 +1,3 @@
-
 $(document).on('turbolinks:load', function() {
   $("#bars").on('click',function(){
     $(".show-list").css('display', 'block')

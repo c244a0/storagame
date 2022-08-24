@@ -28,6 +28,11 @@
   text-align: center;
 }
 
+.graded select {
+  color: black;
+  width: 140px;
+}
+
 #game_player_grade {
   width: 20vw;
 }

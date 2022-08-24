@@ -107,7 +107,7 @@
   flex-direction: column;
   position: absolute;
   right: 0;
-  display: block;
+  display: none;
   font-size: 5px;
   color: black;
   width: 150px;

@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :set_game, only: [:index, :show]
   before_action :proto_recommend, only: :index
   def index
-    @posts = Post.order('id DESC').limit(12)
+    @posts = Post.order('id DESC').page(params[:page]).per(6)
   end
 
   def new

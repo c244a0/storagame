@@ -4,7 +4,7 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
-    @posts = Post.where(game_id: @game.id)
+    @posts = Post.where(game_id: @game.id).page(params[:page]).per(6)
   end
 
   def new

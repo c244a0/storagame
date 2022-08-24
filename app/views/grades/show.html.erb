@@ -2,8 +2,7 @@
   <%= render "shared/side_bar" %>
   <div class="posts-index">
     <div class="sub-header">
-      <div class="info"><%= @game.game_title %>の動画</div>
-      <div class="more">もっと見る</div>
+      <div class="info"><%= @game.game_title %><%= @grade.grades %>の動画</div>
     </div>
     <div class="videos">
       <% @posts.each do |post| %>
@@ -20,6 +19,9 @@
           </div>
         </div>
       <% end %>
+    </div>
+    <div class="page">
+      <%= paginate @posts %>
     </div>
   </div>
 </div>
