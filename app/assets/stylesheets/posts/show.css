@@ -35,14 +35,14 @@
   color: black;
 }
 
-.youtube-cotainer {
+.youtube-container {
   width: 80vw;
   aspect-ratio: 16 / 11;
   z-index: 10;
   background-color: white;
 }
 
-.youtube-cotainer iframe{
+.youtube-container iframe{
   margin-top: 20px;
   margin-left: 20px;
   width: 80vw;
@@ -64,7 +64,7 @@
   word-wrap: break-word;
 }
 .follow {
-  height: 20px;
+  height: 40px;
 }
 
 .post-status {

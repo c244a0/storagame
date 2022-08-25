@@ -4,7 +4,7 @@ $(document).on('turbolinks:load', function() {
     $(".post-show-content-area").css('background-color', '#1e1e1e');
     $(".posts-body").css('color', 'white');
     $(".youtube-title").find("a").css('color', 'white');
-    $(".youtube-cotainer").css('background-color', '#1e1e1e');
+    $(".youtube-container").css('background-color', '#1e1e1e');
     $(".post-show").find("a").css('color', 'white');
     $(this).css('display', 'none');
     $('#light').css('display', 'block');
@@ -15,7 +15,7 @@ $(document).on('turbolinks:load', function() {
     $(".posts-body").css('color', 'black');
     $(".youtube-title").find("a").css('color', 'black');
     $(".post-show").find("a").css('color', 'black');
-    $(".youtube-cotainer").css('background-color', 'white');
+    $(".youtube-container").css('background-color', 'white');
     $(this).css('display', 'none');
     $('#dark').css('display', 'block');
   });
