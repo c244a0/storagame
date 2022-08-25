@@ -13,7 +13,7 @@ class RelationshipsController < ApplicationController
     following.destroy
     flash[:notice] = 'フォローを解除しました'
   end
-  
+
   def followings
     user = User.find(params[:id])
     @user = user.followings

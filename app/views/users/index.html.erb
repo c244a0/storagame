@@ -4,6 +4,9 @@
     <div class="sub-header">
       <div class="info"><%= @user.nickname %>さんの動画</div>
     </div>
+    <div class="follow-length">
+      <%= render 'relationships/follow_length', user: @user %>
+    </div>
     <div class="videos">
       <% @posts.first(6).shuffle.each do |post| %>
         <div class="video">

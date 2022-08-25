@@ -22,12 +22,9 @@
       </div>
       <div class="header-list">
         <% if user_signed_in? %>
-          <% if current_page?(root_path) || current_page?(posts_path)%>
             <%= link_to current_user.nickname, users_path(current_user.id)  %>
             <button class="dark-mode" id="dark">ダークモード</button>
             <button class="dark-mode" id="light" >ライトモード</button>
-          <% end %>
-        <% else %>
         <% end %>
         <div class="post">
           <% if user_signed_in? %>
@@ -58,7 +55,7 @@
     <%= yield %>
     <div class="footer">
       <p class="footer-title">storagame</p>
-      <%= link_to 'お問い合わせ', '#', class: "inquiry" %>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfNCvkIcYqbfGX0M0pw8rScURPwU_xoNbGyed6fxJrlzFdFBw/viewform?usp=sf_link" class="inquiry">お問い合わせ</a>
     </div>
   </body>
 </html>

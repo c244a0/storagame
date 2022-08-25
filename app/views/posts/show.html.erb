@@ -1,17 +1,18 @@
 <div class="posts-body">
   <%= render "shared/side_bar" %>
   <div class="post-show">
+    <div class="post-show-content-area"></div>
     <div class="youtube-cotainer">
-    <iframe src="https://www.youtube.com/embed/<%= @post.youtube_url %>" class="youtube" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/<%= @post.youtube_url %>?rel=0" class="youtube" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div class="post-show-title">
       <%= @post.title %>
     </div>
     <div class="post-nickname">
-      <%= @post.user.nickname %>
+      <%= link_to @post.user.nickname, user_path(@post.user.id), method: :get, class: "video-user"%>
     </div>
     <div class="follow">
-      <% if @user == current_user %>
+      <% if @post.user.id = current_user.id %>
         <%= render 'relationships/follow_button', user: @user %>
       <% end %>
     </div>
@@ -27,6 +28,19 @@
     </div>
     <div class="post-show-content">
       <%= @post.content %>
+    </div>
+    <p>コメント</p>
+    <div class="comments-area">
+      <%= render 'comments/comments', commentss: @comments,  remote: true %>
+    </div>
+    <div class="comment-forms">
+      <% if user_signed_in? %>
+        <%= form_with model: [@post, @comment], remote: true, method: :post do |f| %>
+          <p class="comment-form">コメント投稿画面</p>
+          <%= f.text_field :text, class: "comment-form" %>
+          <%= f.submit "投稿する", class: "comment-form" %>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

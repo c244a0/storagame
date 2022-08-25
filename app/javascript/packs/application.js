@@ -10,7 +10,7 @@ require("channels")
 require("../darkmode")
 require("../show_btn")
 require("../flash")
-
+require("../form")
 
 
 
