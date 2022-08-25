@@ -43,7 +43,6 @@
 }
 
 .youtube-container iframe{
-  margin-top: 20px;
   margin-left: 20px;
   width: 80vw;
   aspect-ratio: 16 / 9;
@@ -74,11 +73,11 @@
 @media screen and (min-width:600px){
   .post-show-title { width: 530px; }
   .posts-editer { width: 530px; }
-  .youtube-cotainer {
+  .youtube-container {
     width: 550px;
     aspect-ratio: 16 / 9;
   }
-  .youtube-cotainer iframe{
+  .youtube-container iframe{
     width: 500px;
     aspect-ratio: 16 / 9;
   }

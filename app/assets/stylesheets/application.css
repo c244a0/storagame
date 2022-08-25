@@ -127,6 +127,7 @@
 /* フッター */
 .footer {
   display: flex;
+  justify-content: space-between;
   background-color: rgb(94, 94, 94);
   color: #ffffff;
   font-size: 20px;
@@ -134,14 +135,12 @@
   width: 100vw;
 }
 
-.footer-title{
-  margin-left: 15px;
-}
 
-.inquiry{
+.footer-list a{
   text-decoration: none;
   color: black;
   margin-left: 50px;
+  margin-right: 10px;
 }
 
 .show-list {
