@@ -12,14 +12,22 @@
   width: 80vw;
 }
 
-.post-nickname {
-  margin: 10px 0;
+.post-nickname a{
+  text-decoration: none;
+  color: black;
 }
 
 .posts-editer {
-  margin: 30px;
+  margin: 0 30px;
   width: 78vw;
   text-align: right;
+}
+
+.post-show-content-area {
+  position: absolute;
+  width: 85vw;
+  height: 300px;
+  background-color: white;
 }
 
 .posts-editer a{
@@ -27,29 +35,65 @@
   color: black;
 }
 
+.youtube-cotainer {
+  width: 80vw;
+  aspect-ratio: 16 / 11;
+  z-index: 10;
+  background-color: white;
+}
+
 .youtube-cotainer iframe{
   margin-top: 20px;
   margin-left: 20px;
   width: 80vw;
   aspect-ratio: 16 / 9;
+  position: absolute;
+  left: 13.6%;
 }
+
 .post-show-content {
   margin-top: 35px;
   overflow: scroll;
   border-top: 1px solid #444444;
   border-bottom: 1px solid #444444;
+  background-color: #444444;
   width:84.9vw;
-  z-index: -10;
-  height: 20vh;
+  z-index: 10;
+  height: 15vh;
   font-size: 15px;
+  word-wrap: break-word;
+}
+.follow {
+  height: 20px;
+}
+
+.post-status {
+  margin: 1px;
 }
 
 @media screen and (min-width:600px){
   .post-show-title { width: 530px; }
   .posts-editer { width: 530px; }
+  .youtube-cotainer {
+    width: 550px;
+    aspect-ratio: 16 / 9;
+  }
   .youtube-cotainer iframe{
     width: 500px;
     aspect-ratio: 16 / 9;
   }
 }
 
+/* コメント一覧画面 */
+.commnet-area {
+  height: 20vh;
+  overflow: scroll;
+}
+
+.comment-text {
+  font-size: 20px;
+}
+
+.comment-name {
+  font-size: 10px
+}

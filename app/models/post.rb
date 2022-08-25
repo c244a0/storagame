@@ -2,6 +2,7 @@ class Post < ApplicationRecord
   belongs_to :user
   belongs_to :game
   belongs_to :grade
+  has_many   :comments
   with_options presence: true do
     validates :user
     validates :title, length: { minimum: 1, maximum: 50 }

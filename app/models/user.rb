@@ -23,4 +23,5 @@ class User < ApplicationRecord
   has_many :game, through: :game_players, dependent: :destroy
   has_many :grades, through: :game_players, dependent: :destroy
   has_many :posts, dependent: :destroy
+  has_many :comments
 end
