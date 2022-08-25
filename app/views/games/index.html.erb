@@ -1,0 +1,12 @@
+<div class="posts-body">
+  <%= render "shared/side_bar" %>
+  <div class="posts-index">
+    <div class="sub-header">
+      <div class="info">動画一覧</div>
+    </div>
+    <%= render 'shared/videos' %>
+    <div class="page">
+      <%= paginate @posts %>
+    </div>
+  </div>
+</div>
