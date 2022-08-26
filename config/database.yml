@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: storagame_production
-  username: storagame
+  username: root
   password: <%= ENV['STORAGAME_DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
