@@ -8,7 +8,6 @@ class CommentsController < ApplicationController
     else
       flash[:alret] = 'コメントの投稿失敗しました'
     end
-    
   end
 
   def destroy
@@ -22,6 +21,7 @@ class CommentsController < ApplicationController
   end
 
   private
+
   def comment_params
     params.require(:comment).permit(:text).merge(user_id: current_user.id, post_id: params[:post_id])
   end
