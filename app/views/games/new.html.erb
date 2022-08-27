@@ -1,4 +1,4 @@
-<div class="game-maneger-body">
+<div class="game-manager-body">
   <h1 class="game-manager-title"><%= current_user.nickname %>さんのゲーム情報登録</h1>
   <% @games.each do |game|%>
     <%= form_with model: @game_players, url: games_path, local: true do |f| %>
