@@ -10,15 +10,20 @@
   width: 100vw;
   height: calc(100vh - 110px);
   overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .game-title {
   font-size: 30px;
+  width: 40vw;
+  height: 10vh;
   color: white;
 }
 
 .grades {
-  width: auto;
-  height: auto;
+  width: 40vw;
+  height: 30vh;
 }
 
 .grade {
