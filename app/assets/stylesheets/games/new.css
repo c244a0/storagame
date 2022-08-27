@@ -16,18 +16,21 @@
   color: white;
 }
 
+.grades {
+  width: auto;
+  height: auto;
+}
+
 .grade {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.graded {
   font-size: 15px;
   color: white;
   text-align: center;
 }
 
-#game_player_grade {
+.game-player-data {
   width: 20vw;
+  height: auto;
 }
