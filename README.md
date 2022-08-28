@@ -18,7 +18,7 @@
 
 - http://storagame.com/
 
-## 使用のための必要情報
+## テスト使用のための必要情報
 
 - Basic認証
 - ユーザー名: orwell
@@ -27,6 +27,13 @@
 - Email: test@com
 - パスワード: ginger
 
+## 使い方
+- 右上の新規登録でユーザーを登録します。
+- ハンバーガーメニューから"投稿する"を選択することで動画投稿画面に入ります。
+- 投稿画面では、タイトル、youtubeのURL、コンテンツについての解説を記入します。ゲーム名、自分のゲームの階級(自己判断)をセレクトボックスを選びます。
+- 入力用テンプレート(もしお時間がございましたらお願いいたします。)
+- タイトル: テスト投稿
+- YoutubeのURL: 
 ## ER図
 - https://drive.google.com/file/d/1l7TDnInYU7jx0YUVqruxtj11oHhRmtr0/view?usp=sharing
 
@@ -74,14 +81,27 @@
 
 ## game_player テーブル
 
-| Column             | Type   | Options                                    |
-| ------------------ | ------ | ------------------------------------------ |
-| user_id            | string | null: false, foreign_key: true             |
-| game_id            | string | null: false, foreign_key: true             |
-| grade_id           | string | null: false, foreign_key: true             |
+| Column             | Type       | Options                                    |
+| ------------------ | ---------- | ------------------------------------------ |
+| user_id            | references | null: false, foreign_key: true             |
+| game_id            | references | null: false, foreign_key: true             |
+| grade_id           | references | null: false, foreign_key: true             |
+
+## association
 
 - belong_to :user
 - belong_to :game
 - belong_to :grade
 
 ## comment テーブル
+
+| Column             | Type   | Options                                    |
+| ------------------ | ------ | ------------------------------------------ |
+| text               | text   | null: false                                |
+| user_id            | string | null: false, foreign_key: true             |
+| post_id            | string | null: false, foreign_key: true             |
+
+## association
+
+- belongs_to :user
+- belongs_to :post
