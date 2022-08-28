@@ -80,4 +80,6 @@ YouTubeやAPIでは強い発信力を持ったプロゲーマーやデッキの�
 
 - belong_to :user
 - belong_to :game
-- belong_to
+- belong_to :grade
+
+## comment テーブル
