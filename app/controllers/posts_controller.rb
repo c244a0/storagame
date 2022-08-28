@@ -63,6 +63,7 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :content, :youtube_url).merge(user_id: current_user.id, game_id: params[:post][:game],
                                                                        grade_id: params[:post][:grade])
   end
+
   def set_post
     @post = Post.find(params[:id])
   end
@@ -70,7 +71,6 @@ class PostsController < ApplicationController
   def proto_recommend
     unless current_user.nil?
       @game_player = GamePlayer.where(user_id: current_user.id)
-
       @post_data = []
       i = 0
       ## ユーザーの登録しているゲーム名と階級と同じidを持つ動画を取り出す
