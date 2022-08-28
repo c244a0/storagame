@@ -5,7 +5,7 @@
       <%= render "shared/errors_messages", model: f.object %>
       <div class="game-title"> 
         <%= game.game_title %>
-        <%= f.hidden_field :game_id, :value => game.id %>
+        <%= f.hidden_field :game_id, :value => game.id %> <%# ゲーム名ごとに表示されているため %>
         <%= f.hidden_field :user_id, :value => current_user.id %>
       </div>
       <div class="grades">
