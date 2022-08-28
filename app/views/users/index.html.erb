@@ -7,21 +7,9 @@
     <div class="follow-length">
       <%= render 'relationships/follow_length', user: @user %>
     </div>
-    <div class="videos">
-      <% @posts.first(6).shuffle.each do |post| %>
-        <div class="video">
-          <%= link_to post_path(post.id) do %>
-            <img src="https://img.youtube.com/vi/<%= post.youtube_url %>/mqdefault.jpg" />
-          <% end %>
-          <div class="youtube-title">
-            <%= link_to post.title, post_path(post.id), method: :get %>
-            <%= @user.nickname %>
-          </div>
-          <div class="video-status">
-            <%= post.game.game_title %><%= post.grade.grades %>
-          </div>
-        </div>
-      <% end %>
+    <%= render 'shared/videos' %>
+    <div class="page">
+      <%= paginate @posts %>
     </div>
   </div>
 </div>
