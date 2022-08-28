@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   def index
-    @posts = Post.order('id DESC').limit(100)
+    @posts = Post.includes(:game, :grade, :user)
   end
 
   def new
