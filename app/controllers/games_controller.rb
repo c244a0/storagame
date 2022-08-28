@@ -3,7 +3,7 @@ class GamesController < ApplicationController
   before_action :set_game
 
   def index 
-    @posts = Post.all.page(params[:page]).per(6)
+    @posts = Post.includes(:game, :grade, :user).page(params[:page]).per(6)
   end
   
   def show

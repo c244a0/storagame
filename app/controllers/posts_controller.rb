@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :set_game, only: [:index, :show]
   before_action :proto_recommend, only: :index
   def index
-    @posts = Post.order('id DESC').page(params[:page]).per(6)
+    @posts = Post.includes(:game, :grade, :user).limit(6)
   end
 
   def new
@@ -75,7 +75,7 @@ class PostsController < ApplicationController
       i = 0
       ## ユーザーの登録しているゲーム名と階級と同じidを持つ動画を取り出す
       @game_player.length.times do
-        @post = Post.where(game_id: @game_player[i].game.id, grade_id: @game_player[i].grade.id)
+        @post = Post.where(game_id: @game_player[i].game.id, grade_id: @game_player[i].grade.id).limit(3)
         @post_data << @post
         i += 1
       end
