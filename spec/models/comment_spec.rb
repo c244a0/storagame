@@ -18,12 +18,12 @@ RSpec.describe Comment, type: :model do
       it 'post_idがないと投稿できない' do
         @comment.post_id = nil
         @comment.valid?
-        expect(@comment.errors.full_messages).to include("Post must exist")
+        expect(@comment.errors.full_messages).to include('Post must exist')
       end
       it 'user_idがないと投稿できない' do
         @comment.user_id = nil
         @comment.valid?
-        expect(@comment.errors.full_messages).to include("User must exist")
+        expect(@comment.errors.full_messages).to include('User must exist')
       end
       it 'textがないと投稿できない' do
         @comment.text = ''
@@ -33,7 +33,7 @@ RSpec.describe Comment, type: :model do
       it 'textが300文字以上だと投稿できない' do
         @comment.text = Faker::Internet.password(min_length: 301)
         @comment.valid?
-        expect(@comment.errors.full_messages).to include("Text is too long (maximum is 300 characters)")
+        expect(@comment.errors.full_messages).to include('Text is too long (maximum is 300 characters)')
       end
     end
   end
