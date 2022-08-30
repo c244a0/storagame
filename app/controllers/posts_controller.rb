@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   before_action :proto_recommend, only: :index
   def index
     @posts = Post.includes(:game, :grade, :user).limit(6)
+
   end
 
   def new
@@ -13,6 +14,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    # youtubeの動画識別に利用されている 11桁の文字列を取得するための正規表現
     url = params[:post][:youtube_url]
     url = if @post.youtube_url[0..16] == 'https://youtu.be/'
             url[17..27]
@@ -29,7 +31,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def show
+  def show # 動画視聴画面
     @post = Post.find(params[:id])
     @user = @post.user
     @comments = Comment.where(post_id: @post)

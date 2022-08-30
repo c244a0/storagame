@@ -154,10 +154,11 @@
 
 .show-btn {
   display: block;
-  font-size: 5px;
+  font-size: 10px;
   color: black;
   background-color: #ffffff;
-  padding: 10px;
+  padding: 10px 5px;
+  text-decoration: none;
 }
 @media screen and (max-width:500px){
   .header-logo a{
