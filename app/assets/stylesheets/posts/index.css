@@ -7,12 +7,15 @@
 }
 .posts-index {
   overflow: scroll;
+  width: 85vw;
 }
 .sub-header {
   display: flex;
   justify-content: space-between;
-  margin: 20px;
+  margin-top: 20px;
   font-size: 25px;
+  width: 80vw;
+  margin: 30px;
 }
 
 .videos {
@@ -22,9 +25,10 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  padding-left: 30px;
 }
 .video {
-  margin: 20px;
+  margin-left: 20px;
 }
 
 .youtube-title {
@@ -39,6 +43,12 @@
   overflow: hidden;
   height: 40px;
   font-size: 20px;
+}
+
+.no-login{
+  text-align: center;
+  font-size: 30px;
+
 }
 
 

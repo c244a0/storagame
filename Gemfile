@@ -60,6 +60,10 @@ gem 'pry-rails'
 gem 'devise'
 gem 'rails-i18n'
 
+gem 'kaminari'
+
+
 group :production do
   gem 'unicorn', '5.4.1'
 end
+

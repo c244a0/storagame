@@ -1,8 +1,11 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_game, only: [:index, :show]
+  before_action :proto_recommend, only: :index
   def index
-    @posts = Post.includes(:game, :grade, :user)
+    @posts = Post.includes(:game, :grade, :user).limit(6)
+
   end
 
   def new
@@ -65,5 +68,19 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def proto_recommend
+    unless current_user.nil?
+      @game_player = GamePlayer.where(user_id: current_user.id)
+      @post_data = []
+      i = 0
+      ## ユーザーの登録しているゲーム名と階級と同じidを持つ動画を取り出す
+      @game_player.length.times do
+        @post = Post.where(game_id: @game_player[i].game.id, grade_id: @game_player[i].grade.id).limit(3)
+        @post_data << @post
+        i += 1
+      end
+    end
   end
 end

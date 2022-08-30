@@ -2,11 +2,21 @@
   height: calc(100vh - 110px);
   width: 15.1vw;
   background-color: #1e1e1e;
-  color:  white;
   border-right: 1px solid white;
   display: flex;
   flex-direction: column;
   align-items: center;
+  list-style: none;
+}
+
+.side-bar a{
+  color: white;
+  text-decoration: none;
+}
+
+.side-game-title {
+  font-size: 13px;
+  margin-top: 20px;
 }
 
 @media screen and (max-width:960px) {

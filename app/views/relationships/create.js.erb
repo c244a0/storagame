@@ -1,3 +1,4 @@
 $(".follow").html("<%= j(render 'relationships/follow_button', user: @user ) %>");
 $(".follow-length").html("<%= j(render 'relationships/follow_length', user: @user) %>");
 $(".flash").html("<%= j(render 'shared/flash') %>");
+setTimeout("$('.alert').fadeOut('slow')", 2000);

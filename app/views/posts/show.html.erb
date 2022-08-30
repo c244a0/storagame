@@ -2,7 +2,7 @@
   <%= render "shared/side_bar" %>
   <div class="post-show">
     <div class="post-show-content-area"></div>
-    <div class="youtube-cotainer">
+    <div class="youtube-container">
       <iframe src="https://www.youtube.com/embed/<%= @post.youtube_url %>?rel=0" class="youtube" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div class="post-show-title">
@@ -12,8 +12,10 @@
       <%= link_to @post.user.nickname, user_path(@post.user.id), method: :get, class: "video-user"%>
     </div>
     <div class="follow">
-      <% if @post.user.id = current_user.id %>
-        <%= render 'relationships/follow_button', user: @user %>
+      <% if user_signed_in? %>
+        <% if @user != current_user %>
+          <%= render 'relationships/follow_button', user: @user %>
+        <% end %>
       <% end %>
     </div>
     <div class="posts-editer">
