@@ -3,8 +3,10 @@
   <div class="posts-index">
     <div class="sub-header">
       <div class="info"><%= @game.game_title %>の動画</div>
-      <div class="more">もっと見る</div>
     </div>
-    
+    <%= render 'shared/videos' %>
+    <div class="page">
+      <%= paginate @posts %>
+    </div>
   </div>
 </div>
