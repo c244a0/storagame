@@ -8,9 +8,16 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname])
   end
 
+
+  ## サイドバー用
+  def set_game
+    @games = Game.all
+    @grades = Grade.all
+
   def basic_auth # Basic認証
     authenticate_or_request_with_http_basic do |username, password|
       username == ENV['BASIC_AUTH_USER'] && password == ENV['BASIC_AUTH_PASSWORD']
     end
+
   end
 end

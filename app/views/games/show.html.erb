@@ -2,10 +2,7 @@
   <%= render "shared/side_bar" %>
   <div class="posts-index">
     <div class="sub-header">
-      <div class="info"><%= @user.nickname %>さんの動画</div>
-    </div>
-    <div class="follow-length">
-      <%= render 'relationships/follow_length', user: @user %>
+      <div class="info"><%= @game.game_title %>の動画</div>
     </div>
     <%= render 'shared/videos' %>
     <div class="page">

@@ -1,4 +1,3 @@
-
 $(document).on('turbolinks:load', function() {
   // ハンバーガーメニューの処理を行うJQuery
   $("#bars").on('click',function(){

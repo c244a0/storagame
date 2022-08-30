@@ -35,7 +35,14 @@
   text-align: center;
 }
 
+.graded select {
+  color: black;
+  width: 140px;
+}
+
+
 .game-player-data {
+
   width: 20vw;
   height: auto;
 }

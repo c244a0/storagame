@@ -23,6 +23,7 @@
 .field input{
   border-radius: 20px;
   padding: 10px;
+  color: black
 }
 @media screen and (max-width:700px){
   .field input{ font-size: 20px;

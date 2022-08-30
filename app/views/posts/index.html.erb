@@ -1,65 +1,42 @@
 <div class="posts-body">
   <%= render "shared/side_bar" %>
   <div class="posts-index">
-    <div class="sub-header">
-      <div class="info">あなたに近いレベルの人の動画</div>
-      <div class="more">もっと見る</div>
-    </div>
-    <div class="videos">
-      <% @posts.each do |post| %>
-        <div class="video">
-          <%= link_to post_path(post.id) do %>
-            <img src="https://img.youtube.com/vi/<%= post.youtube_url %>/mqdefault.jpg" />
-          <% end %>
-          <div class="youtube-title">
-            <%= link_to post.title, post_path(post.id), method: :get %>
-            <%= link_to post.user.nickname, user_path(post.user.id), method: :get, class: "video-user"%>
+
+    <%# ↓ 変数 @post_dataが3分割で定義されているため %>
+    <% i = 0 %>
+    <% unless current_user.nil? %>
+      <% @game_player.map do |game| %>
+        <% if @game_player != nil %>
+          <div class="sub-header">
+            <div class="info"><%= game.game.game_title %>のあなたに近いレベルの人の動画</div>
+            <div class="more"><%= link_to 'もっと見る', grade_path(game.grade.id, game_id: game.game.id) %> </div>
           </div>
-          <div class="video-status">
-            <%= post.game.game_title %><%= post.grade.grades %>
+          <div class="videos">
+            <% @post_data[i].each do |post|%>
+              <div class="video">
+                <%= link_to post_path(post.id) do %>
+                  <img src="https://img.youtube.com/vi/<%= post.youtube_url %>/mqdefault.jpg" />
+                <% end %>
+                <div class="youtube-title">
+                  <%= link_to post.title, post_path(post.id), method: :get %>
+                  <%= link_to post.user.nickname, user_path(post.user.id), method: :get, class: "video-user"%>
+                </div>
+                <div class="video-status">
+                  <%= post.game.game_title %><%= post.grade.grades %>
+                </div>
+              </div>
+            <% end %>
           </div>
-        </div>
+        <% i += 1 %>
+        <% end %>
       <% end %>
-    </div>
+    <% else %>
+      <p class="no-login">ログイン/サインアップをしてください</p>
+    <% end %>
     <div class="sub-header">
-      <div class="info">あなたに近いレベルの人の動画</div>
-      <div class="more">もっと見る</div>
+      <div class="info">動画一覧</div>
+      <div class="more"><%= link_to 'もっと見る', games_path %></div>
     </div>
-    <div class="videos">
-      <% @posts.each do |post| %>
-        <div class="video">
-          <%= link_to post_path(post.id) do %>
-            <img src="https://img.youtube.com/vi/<%= post.youtube_url %>/mqdefault.jpg" />
-          <% end %>
-          <div class="youtube-title">
-            <%= link_to post.title, post_path(post.id), method: :get %>
-            <%= link_to post.user.nickname, '#', method: :get, class: "video-user"%>
-          </div>
-          <div class="video-status">
-            <%= post.game.game_title %><%= post.grade.grades %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-    <div class="sub-header">
-      <div class="info">あなたに近いレベルの人の動画</div>
-      <div class="more">もっと見る</div>
-    </div>
-    <div class="videos">
-      <% @posts.each do |post| %>
-        <div class="video">
-          <%= link_to post_path(post.id) do %>
-            <img src="https://img.youtube.com/vi/<%= post.youtube_url %>/mqdefault.jpg" />
-          <% end %>
-          <div class="youtube-title">
-            <%= link_to post.title, post_path(post.id), method: :get %>
-            <%= link_to post.user.nickname, '#', method: :get, class: "video-user"%>
-          </div>
-          <div class="video-status">
-            <%= post.game.game_title %><%= post.grade.grades %>
-          </div>
-        </div>
-      <% end %>
-    </div>
+    <%= render 'shared/videos' %>
   </div>
 </div>
