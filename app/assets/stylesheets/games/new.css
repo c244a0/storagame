@@ -19,6 +19,7 @@
   width: 40vw;
   height: 10vh;
   color: white;
+  text-align: center;
 }
 
 .grades {
@@ -42,7 +43,12 @@
 
 
 .game-player-data {
-
   width: 20vw;
   height: auto;
+}
+
+.game-grade-data {
+  color: black;
+  width: 14vw;
+  text-align: center;
 }
