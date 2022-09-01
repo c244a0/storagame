@@ -15,7 +15,7 @@
           <% if already_game_player.present? %>
           <%= f.select :grade_id, Grade.all.map { |grade| [grade.grades, grade.id] }, { prompt: '選択してください', selected: already_game_player.grade_id }, include_blank: true, class: "game-grade-data" %>
           <% else %>
-          <%= f.select :grade_id, Grade.all.map { |grade| [grade.grades, grade.id] }, { prompt: '選択してください' }, include_blank: true, class: "game-grade-data", name: "game-#{game.id}" %>
+          <%= f.select :grade_id, Grade.all.map { |grade| [grade.grades, grade.id] }, { prompt: '選択してください' }, include_blank: true, class: "game-grade-data",name: "game_player_grade_id-#{game.id}"  %>
           <% end %>
         </div>
         <div class="actions">

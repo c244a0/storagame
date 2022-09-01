@@ -8,15 +8,15 @@
     src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
     crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7" />
     <meta name="viewport" content="width=device-width, initial-scale=0.7" />
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <meta name="viewport" content="width=device-width, initial-scale=0.7" />
   </head>
   <body>
     <div class="header">
@@ -30,8 +30,7 @@
             <button class="dark-mode" id="light" >ライトモード</button>
         <% end %>
         <div class="post">
-          <% if user_signed_in? %>
-          <% else %>
+          <% unless user_signed_in? %>
             <%= link_to 'ログイン', new_user_session_path, class: "login" %>
             <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
           <% end %>

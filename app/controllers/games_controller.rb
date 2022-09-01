@@ -28,7 +28,7 @@ class GamesController < ApplicationController
       @already_game_players.update(game_player_params)
       redirect_to new_game_path
       flash[:notice] = '更新しました'
-    elsif @game_players.save #初回登録時
+    elsif @game_players.save # 初回登録時
       redirect_to new_game_path
       flash[:notice] = '登録しました'
     else
