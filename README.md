@@ -12,7 +12,7 @@
  MySQL 5.6.51
 - インフラ
  AWS
- EC2,Route 53, RDS(MariaDB)
+ EC2, Route 53, RDS(MariaDB)
 
 ## 機能一覧
 
