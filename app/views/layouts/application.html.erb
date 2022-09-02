@@ -14,7 +14,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.7" />
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <meta name="viewport" content="width=device-width, initial-scale=0.7" />
   </head>
   <body>
     <div class="header">
@@ -28,8 +27,7 @@
             <button class="dark-mode" id="light" >ライトモード</button>
         <% end %>
         <div class="post">
-          <% if user_signed_in? %>
-          <% else %>
+          <% unless user_signed_in? %>
             <%= link_to 'ログイン', new_user_session_path, class: "login" %>
             <%= link_to '新規登録', new_user_registration_path, class: "sign-up" %>
           <% end %>

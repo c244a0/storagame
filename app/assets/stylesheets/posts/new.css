@@ -23,6 +23,7 @@
   font-size: 20px;
   resize: none;
   width: 600px;
+  color: black;
 }
 
 .post-content {
@@ -31,6 +32,7 @@
   width: 600px;
   height: 600px;
   padding: 10px;
+  color: black;
 }
 
 .submit {
@@ -53,6 +55,7 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
+  color :black
 }
 
 .post-select select{

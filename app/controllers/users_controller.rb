@@ -7,9 +7,7 @@ class UsersController < ApplicationController
     @posts = Post.where(user_id: current_user.id).page(params[:page]).per(6)
   end
 
-
   def show # ユーザー本人以外のマイ動画画面
-
     @user = User.find(params[:id])
     @posts = Post.where(user_id: @user).page(params[:page]).per(3)
   end

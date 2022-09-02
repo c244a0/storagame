@@ -21,7 +21,7 @@
     <div class="posts-editer">
       <% if user_signed_in? && current_user.id == @post.user_id %>
         <%= link_to "編集", edit_post_path, method: :get, class: "post-edit" %>
-        <%= link_to "削除", post_path, method: :delete, class:"post-destroy" %>
+        <%= link_to "削除", post_path, method: :delete, class:"post-destroy" , name: "post[delete]" %>
       <% end %>
     </div>
     <div class="post-status">
@@ -40,7 +40,7 @@
         <%= form_with model: [@post, @comment], remote: true, method: :post do |f| %>
           <p class="comment-form">コメント投稿画面</p>
           <%= f.text_field :text, class: "comment-form" %>
-          <%= f.submit "投稿する", class: "comment-form" %>
+          <%= f.submit "投稿する", class: "comment-form", id: "comment-botton" %>
         <% end %>
       <% end %>
     </div>
