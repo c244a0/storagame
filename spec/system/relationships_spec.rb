@@ -16,7 +16,9 @@ RSpec.describe 'Relationships', type: :system do
     visit post_path(@post.id)
     expect(page).to have_text('フォロー')
     click_on('follow-on')
+    expect(page).to have_text('フォロー解除')
     click_on('follow-off')
+    expect(page).to have_text('フォロー')
   end
 
   it '開いているユーザーが動画投稿者と同一であるとフォロー機能が見えずフォローを実行解除できない' do
