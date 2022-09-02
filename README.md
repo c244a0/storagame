@@ -68,7 +68,7 @@
 - その画面でも、フォローをする、解除をすることができます。
 
 ## ER図
-- https://drive.google.com/file/d/1l7TDnInYU7jx0YUVqruxtj11oHhRmtr0/view?usp=sharin
+- https://drive.google.com/file/d/1l7TDnInYU7jx0YUVqruxtj11oHhRmtr0/view?usp=sharing
 
 ## 工夫した点
 
