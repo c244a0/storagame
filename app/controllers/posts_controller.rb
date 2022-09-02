@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :set_game, only: [:index, :show]
   before_action :proto_recommend, only: :index
-  before_action :user_chack, only: [:edit, :destroy]
+  before_action :user_check, only: [:edit, :destroy]
 
   def index
     @posts = Post.includes(:game, :grade, :user).limit(6)
@@ -85,7 +85,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def user_chack
+  def user_check
     if current_user.id != @post.user.id
       flash[:alert] = '不正なアクセスです'
       redirect_to root_path
