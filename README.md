@@ -107,7 +107,7 @@
 - has_many :grades, through: :game_players
 - has_many :posts
 
-## grade テーブル
+## grades テーブル
 
 | Column             | Type   | Options                  |
 | ------------------ | ------ | ------------------------ |
@@ -119,7 +119,7 @@
 - has_many :games, through: :game_players
 - has_many :posts
 
-## game_player テーブル
+## game_players テーブル
 
 | Column             | Type       | Options                                    |
 | ------------------ | ---------- | ------------------------------------------ |
@@ -133,7 +133,7 @@
 - belong_to :game
 - belong_to :grade
 
-## comment テーブル
+## comments テーブル
 
 | Column             | Type   | Options                                    |
 | ------------------ | ------ | ------------------------------------------ |
@@ -145,3 +145,16 @@
 
 - belongs_to :user
 - belongs_to :post
+
+## relationships テーブル
+
+| Column             | Type    | Options                                    |
+| ------------------ | ------- | ------------------------------------------ |
+| following_id       | integer | null: false                                |
+| followed_id        | integer | null: false                                |
+
+## association
+
+- belongs_to :following
+- belongs_to :follower
+
