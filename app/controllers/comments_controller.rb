@@ -4,9 +4,9 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     if @comment.save
       @comments = Comment.where(post_id: @post.id)
-      flash[:notice] = 'コメントを投稿しました'
+      flash.now[:notice] = 'コメントを投稿しました'
     else
-      flash[:alret] = 'コメントの投稿失敗しました'
+      flash.now[:alret] = 'コメントの投稿失敗しました'
     end
   end
 
@@ -14,9 +14,9 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id]).destroy
     if @comment.destroy
       @comments = Comment.where(post_id: @post)
-      flash[:notice] = 'コメントを削除しました'
+      flash.now[:notice] = 'コメントを削除しました'
     else
-      flash[:alret] = 'コメントの削除に失敗しました'
+      flash.now[:alret] = 'コメントの削除に失敗しました'
     end
   end
 

@@ -11,4 +11,12 @@ class Post < ApplicationRecord
     validates :game
     validates :grade
   end
+
+  def self.search(search)
+    if search != ""
+      Post.where('title LIKE(?)', "%#{search}%")
+    else
+      Post.includes(:game, :grade, :user).limit(3)
+    end
+  end
 end
