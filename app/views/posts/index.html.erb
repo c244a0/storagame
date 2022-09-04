@@ -1,7 +1,7 @@
+<%# cssはshared/videoを参照 %>
 <div class="posts-body">
   <%= render "shared/side_bar" %>
   <div class="posts-index">
-
     <%# ↓ 変数 @post_dataが3分割で定義されているため %>
     <% i = 0 %>
     <% unless current_user.nil? %>
@@ -23,6 +23,7 @@
                 </div>
                 <div class="video-status">
                   <%= post.game.game_title %><%= post.grade.grades %>
+                  <span><%= post.how_long_ago %></span>
                 </div>
               </div>
             <% end %>

@@ -1,4 +1,4 @@
-/* サイドバーと本体をflex関係に */
+/* shard/videoと同様のcssを使用 */
 .posts-body {
   display: flex;
   height: calc(100vh - 110px);
@@ -16,6 +16,10 @@
   font-size: 25px;
   width: 80vw;
   margin: 30px;
+}
+
+.sub-header a {
+  margin-right: 20px;
 }
 
 .videos {
@@ -48,9 +52,14 @@
 .no-login{
   text-align: center;
   font-size: 30px;
-
 }
 
+.video-status {
+  display: flex;
+  justify-content: space-between;
+  width: 320px;
+  margin-bottom: 30px;
+}
 
 @media screen and (max-width:960px){
   .sub-header {
