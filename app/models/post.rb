@@ -16,7 +16,7 @@ class Post < ApplicationRecord
     if search != ""
       Post.where('title LIKE(?)', "%#{search}%")
     else
-      Post.includes(:game, :grade, :user).limit(3)
+      Post.includes(:game, :grade, :user)
     end
   end
 end
