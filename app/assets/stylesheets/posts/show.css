@@ -26,7 +26,7 @@
 .post-show-content-area {
   position: absolute;
   width: 85vw;
-  height: 300px;
+  height: 47vh;
   background-color: white;
 }
 
@@ -67,12 +67,17 @@
 }
 
 .post-status {
-  margin: 1px;
+  display: flex;
+  justify-content: space-between;
+  width: 80vw;
 }
+
+
 
 @media screen and (min-width:600px){
   .post-show-title { width: 530px; }
   .posts-editer { width: 530px; }
+  .post-status { width: 530px; }
   .youtube-container {
     width: 550px;
     aspect-ratio: 16 / 9;
