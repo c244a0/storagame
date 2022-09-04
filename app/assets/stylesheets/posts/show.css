@@ -23,13 +23,6 @@
   text-align: right;
 }
 
-.post-show-content-area {
-  position: absolute;
-  width: 85vw;
-  height: 47vh;
-  background-color: white;
-}
-
 .posts-editer a{
   text-decoration: none;
   color: black;
@@ -78,6 +71,7 @@
   .post-show-title { width: 530px; }
   .posts-editer { width: 530px; }
   .post-status { width: 530px; }
+  .post-show-content-area { height: 10vh; }
   .youtube-container {
     width: 550px;
     aspect-ratio: 16 / 9;
