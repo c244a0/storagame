@@ -52,3 +52,11 @@
   width: 14vw;
   text-align: center;
 }
+
+.game-title-select p{
+  color: #ffff;
+}
+
+.grade-select p {
+  color: #ffff;
+}
