@@ -1,10 +1,9 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :set_game, only: [:index, :show]
+  before_action :set_game, only: [:index, :show, :search]
   before_action :proto_recommend, only: :index
   before_action :user_check, only: [:edit, :destroy]
-
   def index
     @posts = Post.includes(:game, :grade, :user).limit(6).order(created_at: :DESC)
   end
@@ -46,7 +45,7 @@ class PostsController < ApplicationController
     @post.update(post_params)
     if @post.save
       redirect_to post_path(@post.id)
-      flash[:notice] = '更新しました'
+      flash.now[:notice] = '更新しました'
     else
       render :edit
     end
@@ -57,6 +56,21 @@ class PostsController < ApplicationController
       redirect_to root_path
     else
       render :show
+    end
+  end
+
+  def search
+    if params[:keyword].present?
+      @posts = Post.search(params[:keyword]).page(params[:page]).per(6)
+      if @posts.length == 0
+        flash.now[:alert] = '検索した内容は見つかりませんでした'
+        @posts = Post.includes(:game, :grade, :user).page(params[:page]).per(6)
+      else
+        flash.now[:notice] = '検索した内容は見つかりました'
+      end
+    else
+      flash[:alert] = '検索した内容が空白です'
+      redirect_to root_path
     end
   end
 
@@ -87,8 +101,9 @@ class PostsController < ApplicationController
 
   def user_check
     if current_user.id != @post.user.id
-      flash[:alert] = '不正なアクセスです'
+      flash.now[:alert] = '不正なアクセスです'
       redirect_to root_path
     end
   end
+
 end

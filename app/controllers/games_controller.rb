@@ -23,17 +23,17 @@ class GamesController < ApplicationController
     # 初回登録時空白の場合
     if @game_players.grade_id.blank?
       redirect_to new_game_path
-      flash[:alert] = '階級が記入されていません'
+      flash.now[:alert] = '階級が記入されていません'
     elsif @already_game_players.present? # ２回目以降の登録時
       @already_game_players.update(game_player_params)
       redirect_to new_game_path
-      flash[:notice] = '更新しました'
+      flash.now[:notice] = '更新しました'
     elsif @game_players.save # 初回登録時
       redirect_to new_game_path
-      flash[:notice] = '登録しました'
+      flash.now[:notice] = '登録しました'
     else
       render :new
-      flash[:alert] = '登録に失敗しました'
+      flash.now[:alert] = '登録に失敗しました'
     end
   end
 

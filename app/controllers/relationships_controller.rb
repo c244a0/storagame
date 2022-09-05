@@ -4,14 +4,14 @@ class RelationshipsController < ApplicationController
     @user = User.find(params[:user_id])
     following = current_user.relationships.build(follower_id: params[:user_id])
     following.save
-    flash[:notice] = 'フォローしました'
+    flash.now[:notice] = 'フォローしました'
   end
 
   def destroy
     @user = User.find(params[:user_id])
     following = current_user.relationships.find_by(params[:follower_id])
     following.destroy
-    flash[:notice] = 'フォローを解除しました'
+    flash.now[:notice] = 'フォローを解除しました'
   end
 
   def followings

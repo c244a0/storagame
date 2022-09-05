@@ -59,6 +59,18 @@
   margin-right: 5px;
 }
 
+.search-input {
+  padding: 5px;
+  width: 20vw;
+}
+
+.search-btn {
+  padding: 5px;
+  border-radius: 3px;
+  background-color: #708090;
+  margin: 10px;
+}
+
 #dark {
   color: black;
   margin: 10px;

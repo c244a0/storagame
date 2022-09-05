@@ -11,6 +11,15 @@ class Post < ApplicationRecord
     validates :game
     validates :grade
   end
+
+
+  def self.search(search)
+    if search != ""
+      Post.where('title LIKE(?)', "%#{search}%")
+    else
+      Post.includes(:game, :grade, :user)
+  end
+  
   def how_long_ago
     if (Time.now - self.created_at) <= 60 * 60
       # 60分以内なら

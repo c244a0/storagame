@@ -21,6 +21,14 @@
         <%= link_to 'Storagame', root_path  %>
       </div>
       <div class="header-list">
+        <div class="search">
+          <% if user_signed_in? %>
+            <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form| %>
+              <%= form.text_field :keyword, placeholder: "動画を検索する", class: "search-input", maxlength:"50" %>
+              <%= form.submit "検索", class: "search-btn" %>
+            <% end %>
+          <% end %>
+        </div>
         <% if user_signed_in? %>
             <%= link_to current_user.nickname, users_path(current_user.id)  %>
             <button class="dark-mode" id="dark">ダークモード</button>
