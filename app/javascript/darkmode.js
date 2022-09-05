@@ -1,3 +1,4 @@
+/* ダークモード */
 $(document).on('turbolinks:load', function() {
   $("#dark").on('click',function(){
     $(".posts-body").css('background-color', '#1e1e1e');

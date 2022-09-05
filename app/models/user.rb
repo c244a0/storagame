@@ -19,6 +19,7 @@ class User < ApplicationRecord
   def is_followed_by?(user)
     reverse_of_relationships.find_by(following_id: user.id).present?
   end
+  
   has_many :game_player, dependent: :destroy
   has_many :game, through: :game_players
   has_many :grades, through: :game_players

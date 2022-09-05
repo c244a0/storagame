@@ -2,7 +2,7 @@ class GamesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
   before_action :set_game
 
-  def index
+  def index # サイドバーでゲーム名がクリックされた場合の処理
     @posts = Post.includes(:game, :grade, :user).page(params[:page]).per(6).order(created_at: :DESC)
   end
 
@@ -20,8 +20,7 @@ class GamesController < ApplicationController
     @game_players = GamePlayer.new(game_player_params)
     @already_game_players = GamePlayer.where(user_id: current_user.id, game_id: params[:game_player][:game_id])
     # ユーザーのゲームステータス登録のための分岐
-    # 初回登録時空白の場合
-    if @game_players.grade_id.blank?
+    if @game_players.grade_id.blank? # 初回登録時空白の場合
       redirect_to new_game_path
       flash.now[:alert] = '階級が記入されていません'
     elsif @already_game_players.present? # ２回目以降の登録時

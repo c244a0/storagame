@@ -12,7 +12,7 @@ class Post < ApplicationRecord
     validates :grade
   end
 
-
+  # 検索後のデータベース引き出し処理
   def self.search(search)
     if search != ""
       Post.where('title LIKE(?)', "%#{search}%")
@@ -20,7 +20,7 @@ class Post < ApplicationRecord
       Post.includes(:game, :grade, :user)
     end
   end
-  
+  # 動画の投稿時間表示
   def how_long_ago
     if (Time.now - self.created_at) <= 60 * 60
       # 60分以内なら

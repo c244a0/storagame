@@ -13,9 +13,11 @@
           <p class="game-player-data">現在の階級</p>
           <% already_game_player = GamePlayer.find_by(user_id: current_user.id, game_id: game.id) %>
           <% if already_game_player.present? %>
-          <%= f.select :grade_id, Grade.all.map { |grade| [grade.grades, grade.id] }, { prompt: '選択してください', selected: already_game_player.grade_id }, include_blank: true, class: "game-grade-data" %>
+            <%# 登録が２回目以降の場合 %>
+            <%= f.select :grade_id, Grade.all.map { |grade| [grade.grades, grade.id] }, { prompt: '選択してください', selected: already_game_player.grade_id }, include_blank: true, class: "game-grade-data" %>
           <% else %>
-          <%= f.select :grade_id, Grade.all.map { |grade| [grade.grades, grade.id] }, { prompt: '選択してください' }, include_blank: true, class: "game-grade-data" %>
+            <%# 登録初回時の場合 %>
+            <%= f.select :grade_id, Grade.all.map { |grade| [grade.grades, grade.id] }, { prompt: '選択してください' }, include_blank: true, class: "game-grade-data" %>
           <% end %>
         </div>
         <div class="actions">

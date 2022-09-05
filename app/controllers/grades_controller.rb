@@ -1,6 +1,6 @@
 class GradesController < ApplicationController
   before_action :set_game
-  def show
+  def show # サイドバーでゲーム名下の階級がクリックされた場合の処理、または一覧画面のもっと見るが押された場合
     @game = Game.find(params[:game_id])
     @grade = Grade.find(params[:id])
     if @grade != nil
