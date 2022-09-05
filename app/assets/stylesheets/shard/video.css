@@ -1,4 +1,4 @@
-/* サイドバーと本体をflex関係に */
+/* shard/videoと同様のcssを使用 */
 .posts-body {
   display: flex;
   height: calc(100vh - 110px);
@@ -18,6 +18,10 @@
   margin: 30px;
 }
 
+.sub-header a {
+  margin-right: 20px;
+}
+
 .videos {
   width: 85vw;
   display: flex;
@@ -30,6 +34,14 @@
 .video {
   margin-left: 20px;
 }
+
+.post-show-content-area {
+  position: absolute;
+  width: 85vw;
+  height: 47vh;
+  background-color: white;
+}
+
 
 .youtube-title {
   display: flex;
@@ -48,9 +60,14 @@
 .no-login{
   text-align: center;
   font-size: 30px;
-
 }
 
+.video-status {
+  display: flex;
+  justify-content: space-between;
+  width: 320px;
+  margin-bottom: 30px;
+}
 
 @media screen and (max-width:960px){
   .sub-header {
