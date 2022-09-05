@@ -35,6 +35,14 @@
   margin-left: 20px;
 }
 
+.post-show-content-area {
+  position: absolute;
+  width: 85vw;
+  height: 47vh;
+  background-color: white;
+}
+
+
 .youtube-title {
   display: flex;
   justify-content: space-between;
