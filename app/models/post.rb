@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   belongs_to :user
   belongs_to :game
   belongs_to :grade
-  has_many   :comments
+  has_many   :comments, dependent: :destroy
   with_options presence: true do
     validates :user
     validates :title, length: { minimum: 1, maximum: 50 }
@@ -31,6 +31,7 @@ class Post < ApplicationRecord
       # 30日以内なら
       (Date.today - self.created_at.to_date).to_i.to_s + "日前"
     else
+      # それ以降
       self.created_at
     end
   end
