@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   before_action :user_check, only: [:edit, :destroy]
 
   def index
-    @posts = Post.includes(:game, :grade, :user).limit(6)
+    @posts = Post.includes(:game, :grade, :user).limit(6).order(created_at: :DESC)
   end
 
   def new
@@ -78,7 +78,7 @@ class PostsController < ApplicationController
       i = 0
       ## ユーザーの登録しているゲーム名と階級と同じidを持つ動画を取り出す
       @game_player.length.times do
-        @post = Post.where(game_id: @game_player[i].game.id, grade_id: @game_player[i].grade.id).limit(3)
+        @post = Post.where(game_id: @game_player[i].game.id, grade_id: @game_player[i].grade.id).limit(3).order(created_at: :DESC)
         @post_data << @post
         i += 1
       end

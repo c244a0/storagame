@@ -3,12 +3,12 @@ class GamesController < ApplicationController
   before_action :set_game
 
   def index
-    @posts = Post.includes(:game, :grade, :user).page(params[:page]).per(6)
+    @posts = Post.includes(:game, :grade, :user).page(params[:page]).per(6).order(created_at: :DESC)
   end
 
   def show
     @game = Game.find(params[:id])
-    @posts = Post.where(game_id: @game.id).page(params[:page]).per(6)
+    @posts = Post.where(game_id: @game.id).page(params[:page]).per(6).order(created_at: :DESC)
   end
 
   def new # ゲームステータス登録画面
