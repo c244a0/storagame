@@ -23,6 +23,7 @@
 - コメント機能(非同期)
 - 動画レコメンド機能
 - ページネーション機能(kaminari)
+- 検索機能
 
 ## テスト
 ### Rspec
@@ -47,8 +48,7 @@
 <img width="443" alt="スクリーンショット 2022-09-05 10 50 09" src="https://user-images.githubusercontent.com/108412889/188344850-05ac422a-fe03-4174-8eb0-0a18e18a4222.png">
 - 右上のログインでユーザー管理画面からログインします。
 <img width="388" alt="スクリーンショット 2022-09-05 10 47 56" src="https://user-images.githubusercontent.com/108412889/188344675-6e1c66f5-13cc-4fd2-a04b-f377099fa46d.png">
-<img width="270" alt="スクリーンショット 2022-09-05 11 17 15" src="https://user-images.githubusercontent.com/108412889/188348285-53d94b67-b2c2-4157-8954-ca8a199e9c31.png">
-<img width="1243" alt="スクリーンショット 2022-09-05 11 16 18" src="https://user-images.githubusercontent.com/108412889/188348174-1b18af99-772c-4015-aaf5-8d648c93cccd.png">
+
 - ハンバーガーメニューから"投稿する"を選択することで動画投稿画面に入ります。
 - 投稿画面では、タイトル、youtubeのURL、コンテンツについての解説を記入します。ゲーム名、自分のゲームの階級(自己判断)をセレクトボックスを選びます。
 - ゲーム情報登録機能では、自分の階級を入力し、自分と同じ階級の動画を動画一覧画面にレコメンドすることができます。
