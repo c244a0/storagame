@@ -18,6 +18,7 @@ class Post < ApplicationRecord
       Post.where('title LIKE(?)', "%#{search}%")
     else
       Post.includes(:game, :grade, :user)
+    end
   end
   
   def how_long_ago
