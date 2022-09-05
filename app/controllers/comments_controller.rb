@@ -11,7 +11,6 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find(params[:id]).destroy
     if @comment.destroy
       @comments = Comment.where(post_id: @post)
       flash.now[:notice] = 'コメントを削除しました'

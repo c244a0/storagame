@@ -51,7 +51,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def destronowy
+  def destroy
     if @post.destroy
       redirect_to root_path
     else
@@ -69,8 +69,8 @@ class PostsController < ApplicationController
         flash.now[:notice] = '検索した内容は見つかりました'
       end
     else
-      redirect_to root_path
       flash[:alert] = '検索した内容が空白です'
+      redirect_to root_path
     end
   end
 
