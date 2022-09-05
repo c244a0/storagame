@@ -48,6 +48,8 @@
 <img width="443" alt="スクリーンショット 2022-09-05 10 50 09" src="https://user-images.githubusercontent.com/108412889/188344850-05ac422a-fe03-4174-8eb0-0a18e18a4222.png">
 - 右上のログインでユーザー管理画面からログインします。
 <img width="388" alt="スクリーンショット 2022-09-05 10 47 56" src="https://user-images.githubusercontent.com/108412889/188344675-6e1c66f5-13cc-4fd2-a04b-f377099fa46d.png">
+<img width="289" alt="スクリーンショット 2022-09-05 11 28 27" src="https://user-images.githubusercontent.com/108412889/188349394-31c3e9fc-2076-4433-9a5f-7d1aea6118b3.png">
+
 
 - ハンバーガーメニューから"投稿する"を選択することで動画投稿画面に入ります。
 - 投稿画面では、タイトル、youtubeのURL、コンテンツについての解説を記入します。ゲーム名、自分のゲームの階級(自己判断)をセレクトボックスを選びます。
