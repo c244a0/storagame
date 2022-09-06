@@ -53,16 +53,18 @@ class PostsController < ApplicationController
 
   def destroy
     if @post.destroy
+      flash[:notice] = '動画が削除されました'
       redirect_to root_path
     else
+      flash[:alert] = '動画の削除に失敗しました'
       render :show
     end
   end
 
   def search
-    if params[:keyword].present?
+    if params[:keyword].present? # 検索内容が空欄かどうかの判定
       @posts = Post.search(params[:keyword]).page(params[:page]).per(6)
-      if @posts.length == 0
+      if @posts.length == 0 # 検索ワードによって見つけることができたかどうかの処理
         flash.now[:alert] = '検索した内容は見つかりませんでした'
         @posts = Post.includes(:game, :grade, :user).page(params[:page]).per(6)
       else
