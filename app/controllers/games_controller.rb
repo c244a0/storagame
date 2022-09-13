@@ -22,17 +22,17 @@ class GamesController < ApplicationController
     # ユーザーのゲームステータス登録のための分岐
     if @game_players.grade_id.blank? # 初回登録時空白の場合
       redirect_to new_game_path
-      flash.now[:alert] = '階級が記入されていません'
+      flash[:alert] = '階級が記入されていません'
     elsif @already_game_players.present? # ２回目以降の登録時
       @already_game_players.update(game_player_params)
       redirect_to new_game_path
-      flash.now[:notice] = '更新しました'
+      flash[:notice] = '更新しました'
     elsif @game_players.save # 初回登録時
       redirect_to new_game_path
-      flash.now[:notice] = '登録しました'
+      flash[:notice] = '登録しました'
     else
       render :new
-      flash.now[:alert] = '登録に失敗しました'
+      flash[:alert] = '登録に失敗しました'
     end
   end
 
