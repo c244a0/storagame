@@ -33,6 +33,7 @@
 ## ポートフォリオURL
 
 - http://storagame.com/
+- google chrome 推奨
 
 ## テスト使用のための必要情報
 
