@@ -26,7 +26,9 @@ class PostsController < ApplicationController
     @post.youtube_url = url
     if @post.save
       redirect_to root_path
+      flash[:notice] = '動画が投稿されました'
     else
+      flash[:alert] = '動画の投稿に失敗しました'
       render :new
     end
   end
