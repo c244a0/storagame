@@ -1,18 +1,5 @@
 /* ダークモード */
 $(document).on('turbolinks:load', function() {
-  var date = new Date(),
-       hour = date.getHours();
-
-    if (hour >= 16 || hour <= 6) {
-       $('body').addClass('Dark-Mode');
-   } else {
-       $('body').removeClass('Dark-Mode');
-   }
-
-   $('#DarkModeSwitcher > button').click(function () {
-       $('body').toggleClass('Dark-Mode');
-   });
-   
   $("#dark").on('click',function(){
     $(".posts-body").css('background-color', '#1e1e1e');
     $(".post-show-content-area").css('background-color', '#1e1e1e');
